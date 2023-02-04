@@ -12,7 +12,7 @@
         <scene sceneID="EHf-IW-A2E">
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                    <view key="view" alpha="0.94999999999999996" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -48,7 +48,7 @@
     <resources>
         <image name="TableDraw" width="974" height="974"/>
         <namedColor name="CustomColor">
-            <color red="0.96238988637924194" green="0.58928247434799974" blue="0.41771574947855439" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.96200001239776611" green="0.58899998664855957" blue="0.41800001263618469" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>
 </document>

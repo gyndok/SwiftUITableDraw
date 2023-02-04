@@ -43,7 +43,7 @@ struct PlayerListView: View {
 
         .padding()
         .background(
-            Color.brown)
+            Color.white)
         .shadow(color: Color.black.opacity(0.3),
                 radius: 10,
                 x: 0.0, y:12)
