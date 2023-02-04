@@ -7,18 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		44629C6D298D9D34000FCE0B /* TableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44629C6C298D9D34000FCE0B /* TableModel.swift */; };
+		44629C6F298DAD82000FCE0B /* PlayerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44629C6E298DAD82000FCE0B /* PlayerListView.swift */; };
+		44629C71298DAD93000FCE0B /* PlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44629C70298DAD93000FCE0B /* PlayerCell.swift */; };
+		44629C73298DADDF000FCE0B /* PlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44629C72298DADDF000FCE0B /* PlayerModel.swift */; };
 		44FC1B2B298C910700D807D7 /* SwiftUITableDrawApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FC1B2A298C910700D807D7 /* SwiftUITableDrawApp.swift */; };
-		44FC1B2D298C910700D807D7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FC1B2C298C910700D807D7 /* ContentView.swift */; };
 		44FC1B2F298C910A00D807D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44FC1B2E298C910A00D807D7 /* Assets.xcassets */; };
 		44FC1B32298C910A00D807D7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44FC1B31298C910A00D807D7 /* Preview Assets.xcassets */; };
+		44FC1B3B298C919500D807D7 /* TourneyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FC1B3A298C919500D807D7 /* TourneyListView.swift */; };
+		44FC1B3D298C91D900D807D7 /* TourneyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FC1B3C298C91D900D807D7 /* TourneyCell.swift */; };
+		44FC1B42298CA9DB00D807D7 /* JSONData.json in Resources */ = {isa = PBXBuildFile; fileRef = 44FC1B41298CA9DA00D807D7 /* JSONData.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		444567F3298D37F200401834 /* SwiftUITableDraw.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftUITableDraw.entitlements; sourceTree = "<group>"; };
+		44629C6C298D9D34000FCE0B /* TableModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableModel.swift; sourceTree = "<group>"; };
+		44629C6E298DAD82000FCE0B /* PlayerListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerListView.swift; sourceTree = "<group>"; };
+		44629C70298DAD93000FCE0B /* PlayerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCell.swift; sourceTree = "<group>"; };
+		44629C72298DADDF000FCE0B /* PlayerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerModel.swift; sourceTree = "<group>"; };
 		44FC1B27298C910700D807D7 /* SwiftUITableDraw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUITableDraw.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44FC1B2A298C910700D807D7 /* SwiftUITableDrawApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUITableDrawApp.swift; sourceTree = "<group>"; };
-		44FC1B2C298C910700D807D7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		44FC1B2E298C910A00D807D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		44FC1B31298C910A00D807D7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		44FC1B3A298C919500D807D7 /* TourneyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourneyListView.swift; sourceTree = "<group>"; };
+		44FC1B3C298C91D900D807D7 /* TourneyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourneyCell.swift; sourceTree = "<group>"; };
+		44FC1B41298CA9DA00D807D7 /* JSONData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = JSONData.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +64,12 @@
 		44FC1B29298C910700D807D7 /* SwiftUITableDraw */ = {
 			isa = PBXGroup;
 			children = (
+				444567F3298D37F200401834 /* SwiftUITableDraw.entitlements */,
+				44FC1B41298CA9DA00D807D7 /* JSONData.json */,
 				44FC1B2A298C910700D807D7 /* SwiftUITableDrawApp.swift */,
-				44FC1B2C298C910700D807D7 /* ContentView.swift */,
+				44FC1B3E298C91E200D807D7 /* Views */,
+				44FC1B3F298C924800D807D7 /* Model */,
+				44FC1B40298C925800D807D7 /* View Model */,
 				44FC1B2E298C910A00D807D7 /* Assets.xcassets */,
 				44FC1B30298C910A00D807D7 /* Preview Content */,
 			);
@@ -65,6 +82,33 @@
 				44FC1B31298C910A00D807D7 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		44FC1B3E298C91E200D807D7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				44FC1B3A298C919500D807D7 /* TourneyListView.swift */,
+				44FC1B3C298C91D900D807D7 /* TourneyCell.swift */,
+				44629C6E298DAD82000FCE0B /* PlayerListView.swift */,
+				44629C70298DAD93000FCE0B /* PlayerCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		44FC1B3F298C924800D807D7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				44629C6C298D9D34000FCE0B /* TableModel.swift */,
+				44629C72298DADDF000FCE0B /* PlayerModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		44FC1B40298C925800D807D7 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Model";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +170,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				44FC1B32298C910A00D807D7 /* Preview Assets.xcassets in Resources */,
+				44FC1B42298CA9DB00D807D7 /* JSONData.json in Resources */,
 				44FC1B2F298C910A00D807D7 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,8 +182,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				44FC1B2D298C910700D807D7 /* ContentView.swift in Sources */,
+				44629C71298DAD93000FCE0B /* PlayerCell.swift in Sources */,
+				44629C73298DADDF000FCE0B /* PlayerModel.swift in Sources */,
 				44FC1B2B298C910700D807D7 /* SwiftUITableDrawApp.swift in Sources */,
+				44FC1B3D298C91D900D807D7 /* TourneyCell.swift in Sources */,
+				44FC1B3B298C919500D807D7 /* TourneyListView.swift in Sources */,
+				44629C6F298DAD82000FCE0B /* PlayerListView.swift in Sources */,
+				44629C6D298D9D34000FCE0B /* TableModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +314,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SwiftUITableDraw/SwiftUITableDraw.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUITableDraw/Preview Content\"";
@@ -293,6 +344,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SwiftUITableDraw/SwiftUITableDraw.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUITableDraw/Preview Content\"";

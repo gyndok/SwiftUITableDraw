@@ -11,7 +11,9 @@ import SwiftUI
 struct SwiftUITableDrawApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationStack{
+                TourneyListView()
+            }
         }
     }
 }
