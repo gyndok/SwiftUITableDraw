@@ -9,12 +9,6 @@ import SwiftUI
 
 struct TourneyCell: View {
     
-//    let festival: String
-//    let event: String
-//    let table: Int
-//    let seat: Int
-//    let day: Int
-//    let restart: String
     
     let tourney: TableDrawModel
     
