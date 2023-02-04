@@ -45,19 +45,14 @@ struct PlayerCell: View {
                             .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                         HStack{
                             Text("Chips: \(player.chipCount) ")
-                            Text("\(player.bigBlindsString) BBs")
+                            Text("\(player.bigBlindsString)")
                         }
                         .foregroundColor(.secondary)
                         .font(.caption)
                         .fontWeight(.semibold)
                         .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                     }
-                Spacer()
-                Image(systemName: "magnifyingglass.circle.fill")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .foregroundColor(.brown)
-                    .frame(minWidth: 25, maxWidth: 25, alignment: .center)
+              
             }
         
             

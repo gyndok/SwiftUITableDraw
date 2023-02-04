@@ -10,11 +10,14 @@ import Foundation
 struct TableDrawModel: Codable, Hashable, Identifiable {
     var id: String = UUID().uuidString
     let festival: String
+    let game: String
     let event: String
     let tableNumber: Int
     let seatNumber: Int
     let day: Int
     let date: String
+    
+    
 }
 
 

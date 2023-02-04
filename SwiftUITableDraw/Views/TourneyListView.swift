@@ -1,9 +1,12 @@
-//
+
 //  TourneyListView.swift
 //  SwiftUITableDraw
 //
 //  Created by Geffrey Klein on 2/2/23.
-//
+
+
+
+
 
 import SwiftUI
 
@@ -11,29 +14,33 @@ import SwiftUI
 
 struct TourneyListView: View {
     
+ 
+
     @State var tourneys: [TableDrawModel] = [
-    TableDrawModel(festival: "2021 World Series of Poker", event: "Event 70: $10,000 Main Event", tableNumber: 234, seatNumber: 5, day: 2, date: "10/7/2021"),
-    TableDrawModel(festival: "2022 World Series of Poker", event: "Event 10: $1500 NLHE", tableNumber: 119, seatNumber: 9, day: 3, date: "6/30/2022"),
-    TableDrawModel(festival: "2023 World Series of Poker", event: "Event 1: Casino Employee Event", tableNumber: 91, seatNumber: 8, day: 2, date: "5/31/2023")
+        TableDrawModel(festival: "2021 World Series of Poker", game: "NLHE", event: "Event 70: $10,000 Main Event", tableNumber: 234, seatNumber: 5, day: 2, date: "10/7/2021"),
+        TableDrawModel(festival: "2022 World Series of Poker", game: "NLHE", event: "Event 10: $1500 NLHE", tableNumber: 119, seatNumber: 9, day: 3, date: "6/30/2022"),
+        TableDrawModel(festival: "2023 World Series of Poker", game: "NLHE", event: "Event 1: Casino Employee Event", tableNumber: 91, seatNumber: 8, day: 2, date: "5/31/2023")
     ]
     
+ 
+
     @State var searchPlayer: String = ""
-    
+
     var body: some View {
-        
+
         VStack {
             TextField("Who are you looking for?", text: $searchPlayer)
                 .padding(.horizontal)
                 .frame(height: 55)
                 .background(Color(.systemGray6))
-            .cornerRadius(10)
+                .cornerRadius(10)
             Button (action:{
-                
+
             }, label: {
                 Text("Find The Tables")
                     .font(.headline)
                     .frame(height:45)
-                    .frame(width: 250)
+                    .frame(width: 360)
                     .foregroundColor(.white)
                     .background(Color.brown)
                     .cornerRadius(10)
@@ -42,17 +49,20 @@ struct TourneyListView: View {
 
         }
         .padding(14)
-    
+
         List{
-                ForEach(tourneys) { tourney in
+            ForEach(tourneys) { tourney in
+                NavigationLink(destination: PlayerListView()) {
                     TourneyCell(tourney: tourney)
                 }
+            }
         }
         .listStyle(PlainListStyle())
-        
     }
- 
-}
+
+    }
+
+
 
 struct TourneyListView_Previews: PreviewProvider {
     static var previews: some View {

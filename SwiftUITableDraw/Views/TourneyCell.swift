@@ -62,11 +62,7 @@ struct TourneyCell: View {
                 .fontWeight(.semibold)
                 .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                 }
-            Image(systemName: "arrow.right.square.fill")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .foregroundColor(.brown)
-                .frame(minWidth: 25, maxWidth: 25, alignment: .center)
+
                 
         }
         
@@ -76,8 +72,8 @@ struct TourneyCell: View {
 }
 
 struct TourneyCell_Previews: PreviewProvider {
-    static var tourney1 =    TableDrawModel(festival: "2023 World Series of Poker", event: "Event 1: Casino Employee Event", tableNumber: 91, seatNumber: 8, day: 2, date: "5/31/2023")
-    static var tourney2 = TableDrawModel(festival: "2022 World Series of Poker", event: "Event 10: $1500 NLHE", tableNumber: 119, seatNumber: 9, day: 3, date: "6/30/2022")
+    static var tourney1 =    TableDrawModel(festival: "2023 World Series of Poker", game: "NLHE", event: "Event 1: Casino Employee Event", tableNumber: 91, seatNumber: 8, day: 2, date: "5/31/2023")
+    static var tourney2 = TableDrawModel(festival: "2022 World Series of Poker", game: "NLHE", event: "Event 10: $1500 NLHE", tableNumber: 119, seatNumber: 9, day: 3, date: "6/30/2022")
     static var previews: some View {
         Group{
             TourneyCell(tourney: tourney1)

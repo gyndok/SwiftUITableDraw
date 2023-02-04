@@ -14,7 +14,7 @@ struct PlayerModel: Codable, Hashable, Identifiable {
     let tableNumber: Int
     let seatNumber: Int
     let chipCount: String
-    let bigBlinds: Double
+    let bigBlinds: Double?
     
     var symbol: String {
         switch seatNumber {
@@ -44,8 +44,15 @@ struct PlayerModel: Codable, Hashable, Identifiable {
       }
     
     var bigBlindsString: String {
-       return String(format: "%.1f", bigBlinds)
+        if bigBlinds != nil{
+            return "\(String(format: "%.1f", bigBlinds!)) BBs"
+        }else{
+            return ""
+        }
+            
      }
+    
+   
 }
 
 
