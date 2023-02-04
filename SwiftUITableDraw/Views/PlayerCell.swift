@@ -24,7 +24,10 @@ struct PlayerCell: View {
                     .aspectRatio(contentMode: .fit)
                     .foregroundColor(.brown)
                     .frame(minWidth: 25, maxWidth: 25, alignment: .center)
-                    .padding(5)
+                    .padding()
+                    .shadow(color: Color.brown.opacity(0.6),
+                            radius: 10,
+                            x: 0.0, y:12)
                   
                 
                     VStack{

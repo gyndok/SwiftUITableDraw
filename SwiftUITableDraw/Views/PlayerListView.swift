@@ -39,7 +39,16 @@ struct PlayerListView: View {
             }
             .font(.footnote)
             .fontWeight(.thin)
-        }
+     }
+
+        .padding()
+        .background(
+            Color.brown)
+        .shadow(color: Color.black.opacity(0.3),
+                radius: 10,
+                x: 0.0, y:12)
+        
+       
         
         
         List{

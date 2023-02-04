@@ -25,6 +25,10 @@ struct TourneyCell: View {
                 .aspectRatio(contentMode: .fit)
                 .frame(minWidth: 50, maxWidth: 50, alignment: .top)
                .clipShape(Rectangle())
+               .padding()
+               .shadow(color: Color.brown.opacity(0.6),
+                       radius: 10,
+                       x: 0.0, y:12)
             
                 VStack{
                 

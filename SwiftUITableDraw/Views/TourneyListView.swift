@@ -41,14 +41,19 @@ struct TourneyListView: View {
                     .font(.headline)
                     .frame(height:45)
                     .frame(width: 360)
-                    .foregroundColor(.white)
-                    .background(Color.brown)
+                    .foregroundColor(.brown)
+                    .background(Color.white)
                     .cornerRadius(10)
             })
 
 
         }
-        .padding(14)
+        .padding()
+        .background(
+            Color.brown)
+        .shadow(color: Color.black.opacity(0.3),
+                radius: 10,
+                x: 0.0, y:12)
 
         List{
             ForEach(tourneys) { tourney in
