@@ -9,12 +9,20 @@
 
 
 import SwiftUI
+import Firebase
+import FirebaseCore
+import FirebaseFirestore
 
 
+
+let db = Firestore.firestore()
+let tourneyRef = db.collection("PokerPlayers")
 
 struct TourneyListView: View {
     
- 
+    
+    
+    
 
     @State var tourneys: [TableDrawModel] = [
         TableDrawModel(festival: "2021 World Series of Poker", game: "NLHE", event: "Event 70: $10,000 Main Event", tableNumber: 234, seatNumber: 5, day: 2, date: "10/7/2021"),
@@ -35,7 +43,21 @@ struct TourneyListView: View {
                 .background(Color(.systemGray6))
                 .cornerRadius(10)
             Button (action:{
+                
 
+//                db.collection("PokerPlayers").whereField("playerName", isEqualTo: searchPlayer)
+//                    .getDocuments() { (querySnapshot, err) in
+//                        if let err = err {
+//                            print("Error getting documents: \(err)")
+//                        } else {
+//                            for document in querySnapshot!.documents {
+//                                print("\(document.documentID) => \(document.data())")
+//                            }
+//                        }
+//                }
+                
+                
+                
             }, label: {
                 Text("Find The Tables")
                     .font(.headline)
