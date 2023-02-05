@@ -13,16 +13,12 @@ import Firebase
 import FirebaseCore
 import FirebaseFirestore
 
-
-
 let db = Firestore.firestore()
-let tourneyRef = db.collection("PokerPlayers")
+let tourneyRef = db.collection(K.dbCollection)
+let userDefaults = UserDefaults.standard
+
 
 struct TourneyListView: View {
-    
-    
-    
-    
 
     @State var tourneys: [TableDrawModel] = [
         TableDrawModel(festival: "2021 World Series of Poker", game: "NLHE", event: "Event 70: $10,000 Main Event", tableNumber: 234, seatNumber: 5, day: 2, date: "10/7/2021"),
@@ -30,33 +26,27 @@ struct TourneyListView: View {
         TableDrawModel(festival: "2023 World Series of Poker", game: "NLHE", event: "Event 1: Casino Employee Event", tableNumber: 91, seatNumber: 8, day: 2, date: "5/31/2023")
     ]
     
- 
-
-    @State var searchPlayer: String = ""
+    @State var searchPlayer: String = userDefaults.object(forKey: K.searchPlayerNameKey) as? String ?? ""
+    
 
     var body: some View {
-
+        
         VStack {
             TextField("Who are you looking for?", text: $searchPlayer)
+                .autocorrectionDisabled(true)
+                .onTapGesture {
+                        print("tapped")
+                    }
                 .padding(.horizontal)
                 .frame(height: 55)
                 .background(Color(.systemGray6))
                 .cornerRadius(10)
             Button (action:{
                 
+                userDefaults.set(searchPlayer, forKey: K.searchPlayerNameKey)
+                print("User Saved")
+                
 
-//                db.collection("PokerPlayers").whereField("playerName", isEqualTo: searchPlayer)
-//                    .getDocuments() { (querySnapshot, err) in
-//                        if let err = err {
-//                            print("Error getting documents: \(err)")
-//                        } else {
-//                            for document in querySnapshot!.documents {
-//                                print("\(document.documentID) => \(document.data())")
-//                            }
-//                        }
-//                }
-                
-                
                 
             }, label: {
                 Text("Find The Tables")

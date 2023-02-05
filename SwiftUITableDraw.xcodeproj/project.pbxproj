@@ -17,6 +17,7 @@
 		44696B55298F1F0D007CB53A /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 44696B54298F1F0D007CB53A /* FirebaseFirestore */; };
 		44696B57298F1F0D007CB53A /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = 44696B56298F1F0D007CB53A /* FirebaseFunctions */; };
 		448025AB298E0EEE009736D2 /* PlayerDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448025AA298E0EEE009736D2 /* PlayerDetailView.swift */; };
+		449704ED29901A52004CD71D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449704EC29901A52004CD71D /* Constants.swift */; };
 		44AD5B6F298EDDE5002EC96D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44AD5B6E298EDDE5002EC96D /* LaunchScreen.storyboard */; };
 		44FC1B2B298C910700D807D7 /* SwiftUITableDrawApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FC1B2A298C910700D807D7 /* SwiftUITableDrawApp.swift */; };
 		44FC1B2F298C910A00D807D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44FC1B2E298C910A00D807D7 /* Assets.xcassets */; };
@@ -35,6 +36,8 @@
 		44629C72298DADDF000FCE0B /* PlayerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerModel.swift; sourceTree = "<group>"; };
 		44696B4F298F1C92007CB53A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		448025AA298E0EEE009736D2 /* PlayerDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailView.swift; sourceTree = "<group>"; };
+		449704EC29901A52004CD71D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		449704EE29901D39004CD71D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		44AD5B6E298EDDE5002EC96D /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		44FC1B27298C910700D807D7 /* SwiftUITableDraw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUITableDraw.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44FC1B2A298C910700D807D7 /* SwiftUITableDrawApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUITableDrawApp.swift; sourceTree = "<group>"; };
@@ -78,6 +81,7 @@
 		44FC1B29298C910700D807D7 /* SwiftUITableDraw */ = {
 			isa = PBXGroup;
 			children = (
+				449704EE29901D39004CD71D /* Info.plist */,
 				444567F3298D37F200401834 /* SwiftUITableDraw.entitlements */,
 				44FC1B41298CA9DA00D807D7 /* JSONData.json */,
 				44FC1B2A298C910700D807D7 /* SwiftUITableDrawApp.swift */,
@@ -88,6 +92,7 @@
 				44FC1B2E298C910A00D807D7 /* Assets.xcassets */,
 				44FC1B30298C910A00D807D7 /* Preview Content */,
 				442EDE23298E9EEB00382014 /* ModelData.swift */,
+				449704EC29901A52004CD71D /* Constants.swift */,
 			);
 			path = SwiftUITableDraw;
 			sourceTree = "<group>";
@@ -215,6 +220,7 @@
 				442EDE24298E9EEB00382014 /* ModelData.swift in Sources */,
 				44FC1B2B298C910700D807D7 /* SwiftUITableDrawApp.swift in Sources */,
 				44FC1B3D298C91D900D807D7 /* TourneyCell.swift in Sources */,
+				449704ED29901A52004CD71D /* Constants.swift in Sources */,
 				448025AB298E0EEE009736D2 /* PlayerDetailView.swift in Sources */,
 				44FC1B3B298C919500D807D7 /* TourneyListView.swift in Sources */,
 				44629C6F298DAD82000FCE0B /* PlayerListView.swift in Sources */,
@@ -351,13 +357,12 @@
 				DEVELOPMENT_TEAM = NJ4JGW72MW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SwiftUITableDraw/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "My Table Draw";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -383,13 +388,12 @@
 				DEVELOPMENT_TEAM = NJ4JGW72MW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SwiftUITableDraw/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "My Table Draw";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
