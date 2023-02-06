@@ -63,6 +63,7 @@ struct TourneyCell: View {
 
                 
         }
+    
         
 
     }
