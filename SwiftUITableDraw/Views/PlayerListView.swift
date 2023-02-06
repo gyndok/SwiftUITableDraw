@@ -45,8 +45,8 @@ struct PlayerListView: View {
             }.padding()
             .font(.footnote)
             .fontWeight(.thin)
-           .background(
-            Color.white)
+            .cornerRadius(30)
+           .background(Color.white)
            .shadow(color: Color.brown.opacity(0.3),
                 radius: 10,
                 x: 0.0, y:12)

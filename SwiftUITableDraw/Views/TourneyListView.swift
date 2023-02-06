@@ -46,6 +46,7 @@ struct TourneyListView: View {
                 userDefaults.set(searchPlayer, forKey: K.searchPlayerNameKey)
                 print("User Saved")
                 fetchTourneys(collection: K.dbCollection, field: K.searchPlayerNameKey, player: searchPlayer)
+                print("function used")
 
                 
             }, label: {
