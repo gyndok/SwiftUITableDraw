@@ -13,9 +13,10 @@ import Firebase
 import FirebaseCore
 import FirebaseFirestore
 
-let db = Firestore.firestore()
-let tourneyRef = db.collection(K.dbCollection)
+
+//let tourneyRef = db.collection(K.dbCollection)
 let userDefaults = UserDefaults.standard
+let db = Firestore.firestore()
 
 
 struct TourneyListView: View {
@@ -82,6 +83,8 @@ struct TourneyListView: View {
 
 func fetchTourneys (collection: String, field: String, player: String){
     print("1")
+    
+    
     db.collection(collection).whereField(field, isEqualTo: player)
     .getDocuments() { (querySnapshot, err) in
             if let err = err {
