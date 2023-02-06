@@ -45,7 +45,7 @@ struct TourneyListView: View {
                 
                 userDefaults.set(searchPlayer, forKey: K.searchPlayerNameKey)
                 print("User Saved")
-                
+                fetchTourneys(collection: K.dbCollection, field: K.searchPlayerNameKey, player: searchPlayer)
 
                 
             }, label: {
@@ -78,6 +78,21 @@ struct TourneyListView: View {
     }
 
     }
+
+func fetchTourneys (collection: String, field: String, player: String){
+    print("1")
+    db.collection(collection).whereField(field, isEqualTo: player)
+    .getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                    print("2")
+                    print("\(document.documentID) => \(document.data())")
+                }
+            }
+    }
+}
 
 
 
