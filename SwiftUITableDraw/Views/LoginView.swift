@@ -87,23 +87,25 @@ struct LoginView: View {
                             .foregroundColor(.brown)
                             .background(Color.white)
                             .cornerRadius(5.0)
-                        Button(action: {
-                            Auth.auth().signIn(withEmail: self.login, password: self.password) { (result, error) in
-                                                 if error != nil {
-                                                     print("Login failed: \(error!.localizedDescription)")
-                                                     return
-                                                 }
-                                                 print("Login successful")
-                                             }
-                        }) {
-                            Text("Sign In")
-                        }
-                        .font(.headline)
+                        NavigationLink(destination: TourneyListView()){
+                            Button(action: {
+                                Auth.auth().signIn(withEmail: self.login, password: self.password) { (result, error) in
+                                    if error != nil {
+                                        print("Login failed: \(error!.localizedDescription)")
+                                        return
+                                    }
+                                    print("Login successful")
+                                }
+                            }) {
+                                Text("Sign In")
+                            }
+                            .font(.headline)
                             .frame(height:45)
                             .frame(width: 100)
                             .foregroundColor(.brown)
                             .background(Color.white)
                             .cornerRadius(10)
+                        }
                     }
                 } else {
                     VStack {
