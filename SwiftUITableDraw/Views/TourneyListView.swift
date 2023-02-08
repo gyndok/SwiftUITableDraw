@@ -14,20 +14,14 @@ import FirebaseCore
 import FirebaseFirestore
 
 
-
 let userDefaults = UserDefaults.standard
-let db = Firestore.firestore()
-
 
 struct TourneyListView: View {
+   
+    let db = Firestore.firestore()
     
     @State var tables: [PlayerTable] = []
-
-    @State var tourneys: [TableDrawModel] = [
-        TableDrawModel(festival: "2021 World Series of Poker", game: "NLHE", event: "Event 70: $10,000 Main Event", tableNumber: 234, seatNumber: 5, day: 2, date: "10/7/2021"),
-        TableDrawModel(festival: "2022 World Series of Poker", game: "NLHE", event: "Event 10: $1500 NLHE", tableNumber: 119, seatNumber: 9, day: 3, date: "6/30/2022"),
-        TableDrawModel(festival: "2023 World Series of Poker", game: "NLHE", event: "Event 1: Casino Employee Event", tableNumber: 91, seatNumber: 8, day: 2, date: "5/31/2023")
-    ]
+    @State var tourneys: [TableDrawModel] = []
     
     @State var searchPlayer: String = userDefaults.object(forKey: K.searchPlayerNameKey) as? String ?? ""
     
@@ -47,9 +41,30 @@ struct TourneyListView: View {
             Button (action:{
                 
                 userDefaults.set(searchPlayer, forKey: K.searchPlayerNameKey)
-                print("User Saved")
-                fetchTourneys(collection: K.dbCollection, field: K.searchPlayerNameKey, player: searchPlayer)
-                print("function used")
+                tourneys.removeAll()
+                db.collection("PokerPlayers").whereField("player", isEqualTo: searchPlayer)
+                .getDocuments() { (querySnapshot, err) in
+                        if let err = err {
+                            print("Error getting documents: \(err)")
+                        } else {
+                            for document in querySnapshot!.documents {
+                                let data = document.data()
+                                if let festival = data["festival"] as? String,
+                                    let game = data["event"] as? String,
+                                    let event = data["event"] as? String,
+                                    let tableNumber = data["tableNumber"] as? Int,
+                                    let seatNumber = data["seatNumber"] as? Int,
+                                    let day = data["day"] as? Int,
+                                    let date = data["restartDate2"] as? String {
+                                    let tourney = TableDrawModel(festival: festival, game: game, event: event, tableNumber: tableNumber, seatNumber: seatNumber, day: day, date: date)
+                                    print(tourney.festival)
+                                    print(tourney.event)
+                                    tourneys.append(tourney)
+                                }
+                            }
+                        }
+                }
+                
 
                 
             }, label: {
@@ -83,22 +98,6 @@ struct TourneyListView: View {
 
     }
 
-func fetchTourneys (collection: String, field: String, player: String){
-    print("1")
-    
-    
-    db.collection(collection).whereField(field, isEqualTo: player)
-    .getDocuments() { (querySnapshot, err) in
-            if let err = err {
-                print("Error getting documents: \(err)")
-            } else {
-                for document in querySnapshot!.documents {
-                    print("2")
-                    print("\(document.documentID) => \(document.data())")
-                }
-            }
-    }
-}
 
 
 

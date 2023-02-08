@@ -33,7 +33,7 @@ struct SwiftUITableDrawApp: App {
         
         WindowGroup {
             NavigationStack{
-                LoginView()
+                TourneyListView()
             }
         }
     }

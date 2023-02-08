@@ -22,7 +22,7 @@ struct LoginView: View {
     
     var body: some View {
         
-        ZStack {
+        ZStack (alignment: .bottom) {
             Color.brown
                 .ignoresSafeArea(.all)
             VStack (alignment: .center, spacing: 15){
@@ -40,33 +40,40 @@ struct LoginView: View {
                     .resizable()
                     .frame (width: 215, height: 200)
                
-                HStack {
-                    Button(action: {
-                        self.showLogin = true
-                    }) {
-                        Text("Login")
-                            
-                            .font(.headline)
-                    }.font(.headline)
-                        .frame(height:45)
-                        .frame(width: 150)
-                        .foregroundColor(.brown)
-                        .background(Color.white)
-                        .cornerRadius(10)
-                    Spacer()
-                    Button(action: {
-                        self.showLogin = false
-                    }) {
-                        Text("I'm New Here")
-                            .font(.headline)
-                    }.font(.headline)
-                        .frame(height:45)
-                        .frame(width: 150)
-                        .foregroundColor(.brown)
-                        .background(Color.white)
-                        .cornerRadius(10)
-                }
-                .padding()
+                
+                    HStack {
+                        if !showLogin {
+                            Button(action: {
+                                self.showLogin.toggle()
+                            }) {
+                                Text("Switch to Login")
+                                
+                                    .font(.headline)
+                            }.font(.headline)
+                                .frame(height:45)
+                                .frame(width: 220)
+                                .foregroundColor(.brown)
+                                .background(Color.white)
+                                .cornerRadius(10)
+                                
+                        } else if showLogin{
+                            Button(action: {
+                                self.showLogin.toggle()
+                            }) {
+                                Text("I Am New Here")
+                                    .font(.headline)
+                            }.font(.headline)
+                                .frame(height:45)
+                                .frame(width: 220)
+                                .foregroundColor(.brown)
+                                .background(Color.white)
+                                .cornerRadius(10)
+                                
+                        }
+                    }
+                    .padding()
+                Spacer()
+                
                 
                 if showLogin {
                     VStack {
