@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		442882FC29933D940034C949 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442882FB29933D940034C949 /* LoginView.swift */; };
 		442EDE24298E9EEB00382014 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442EDE23298E9EEB00382014 /* ModelData.swift */; };
 		4453F8A729913AF600119D98 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4453F8A629913AF600119D98 /* GoogleService-Info.plist */; };
 		44629C6D298D9D34000FCE0B /* TableDrawModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44629C6C298D9D34000FCE0B /* TableDrawModel.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		442882FB29933D940034C949 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		442EDE23298E9EEB00382014 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 		444567F3298D37F200401834 /* SwiftUITableDraw.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftUITableDraw.entitlements; sourceTree = "<group>"; };
 		4453F8A629913AF600119D98 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				44629C6E298DAD82000FCE0B /* PlayerListView.swift */,
 				448025AA298E0EEE009736D2 /* PlayerDetailView.swift */,
 				44AD5B6E298EDDE5002EC96D /* LaunchScreen.storyboard */,
+				442882FB29933D940034C949 /* LoginView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -223,6 +226,7 @@
 				449704ED29901A52004CD71D /* Constants.swift in Sources */,
 				448025AB298E0EEE009736D2 /* PlayerDetailView.swift in Sources */,
 				44FC1B3B298C919500D807D7 /* TourneyListView.swift in Sources */,
+				442882FC29933D940034C949 /* LoginView.swift in Sources */,
 				44629C6F298DAD82000FCE0B /* PlayerListView.swift in Sources */,
 				44629C6D298D9D34000FCE0B /* TableDrawModel.swift in Sources */,
 			);

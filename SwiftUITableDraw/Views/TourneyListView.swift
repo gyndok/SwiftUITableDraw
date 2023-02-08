@@ -14,12 +14,14 @@ import FirebaseCore
 import FirebaseFirestore
 
 
-//let tourneyRef = db.collection(K.dbCollection)
+
 let userDefaults = UserDefaults.standard
 let db = Firestore.firestore()
 
 
 struct TourneyListView: View {
+    
+    @State var tables: [PlayerTable] = []
 
     @State var tourneys: [TableDrawModel] = [
         TableDrawModel(festival: "2021 World Series of Poker", game: "NLHE", event: "Event 70: $10,000 Main Event", tableNumber: 234, seatNumber: 5, day: 2, date: "10/7/2021"),
@@ -32,7 +34,7 @@ struct TourneyListView: View {
 
     var body: some View {
         
-        VStack {
+        VStack (spacing: 10) {
             TextField("Who are you looking for?", text: $searchPlayer)
                 .autocorrectionDisabled(true)
                 .onTapGesture {
@@ -69,7 +71,7 @@ struct TourneyListView: View {
                 radius: 10,
                 x: 0.0, y:12)
 
-        List{
+        List {
             ForEach(tourneys) { tourney in
                 NavigationLink(destination: PlayerListView()) {
                     TourneyCell(tourney: tourney)
