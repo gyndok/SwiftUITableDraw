@@ -18,43 +18,48 @@ struct PlayerListView: View {
         
 
         
-        VStack {
-           
-            Text("2011 42nd Annual World Series of Poker")
-                .font(.body)
-                .fontWeight(.semibold)
-                .padding(5)
-
-            VStack (alignment: .center, spacing: 5) {
-                
-                Text("Event #10: No-Limit Hold'em / Six Handed")
-                    .font(.subheadline)
+        ZStack {
+//            Color.brown
+//                .edgesIgnoringSafeArea(.all)
+            VStack {
+               
+                Text("2011 42nd Annual World Series of Poker")
+                    .font(.body)
                     .fontWeight(.semibold)
-                HStack {
-                    Text("6/13/2011")
-                    Text("Day 3")
-                    Text("Table 278")
-                }
+                    .padding(5)
+
+                VStack (alignment: .center, spacing: 5) {
+                    
+                    Text("Event #10: No-Limit Hold'em / Six Handed")
+                        .font(.subheadline)
+                        .fontWeight(.semibold)
+                    HStack {
+                        Text("6/13/2011")
+                        Text("Day 3")
+                        Text("Table 278")
+                    }
+                    .font(.footnote)
+                    .fontWeight(.thin)
+                    HStack {
+                        Text("Starting Field: 1920")
+                        Text("Players Remaining: 15")
+                    }
+
+                }.padding()
                 .font(.footnote)
                 .fontWeight(.thin)
-                HStack {
-                    Text("Starting Field: 1920")
-                    Text("Players Remaining: 15")
-                }
-
-            }.padding()
-            .font(.footnote)
-            .fontWeight(.thin)
-            .cornerRadius(30)
-           .background(Color.white)
-           .shadow(color: Color.brown.opacity(0.3),
-                radius: 10,
-                x: 0.0, y:12)
-           .overlay(
-                  RoundedRectangle(cornerRadius: 16)
-                      .stroke(.brown, lineWidth: 4)
-              )
-    }
+                .cornerRadius(30)
+               .background(Color.white)
+               .shadow(color: Color.brown.opacity(0.3),
+                    radius: 10,
+                    x: 0.0, y:12)
+               .overlay(
+                      RoundedRectangle(cornerRadius: 16)
+                          .stroke(.brown, lineWidth: 4)
+                  )
+            }
+            
+        }
 
     
 
