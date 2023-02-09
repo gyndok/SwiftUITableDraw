@@ -32,7 +32,7 @@ struct SwiftUITableDrawApp: App {
     var body: some Scene {
         
         WindowGroup {
-            NavigationStack{
+            NavigationView{
                 LoginView()
             }
         }
