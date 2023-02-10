@@ -32,8 +32,8 @@ struct SwiftUITableDrawApp: App {
     var body: some Scene {
         
         WindowGroup {
-            NavigationView{
-                LoginView()
+            NavigationStack{
+                TourneyListView()
             }
         }
     }
