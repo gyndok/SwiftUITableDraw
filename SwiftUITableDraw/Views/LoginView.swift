@@ -24,7 +24,7 @@ struct LoginView: View {
         
         NavigationStack {
             ZStack (alignment: .top) {
-                Color.brown
+                Color(UIColor(named: "Isabelline") ?? UIColor.brown)
                     .ignoresSafeArea(.all)
                 VStack (alignment: .center, spacing: 15){
                     Text("My Table Draw")
@@ -32,8 +32,8 @@ struct LoginView: View {
                         .fontWeight(.bold)
                         .frame(width: 300, height:30)
                         .padding()
-                        .foregroundColor(.brown)
-                        .background(Color.white)
+                        .foregroundColor(Color(UIColor(named: "Isabelline") ?? UIColor.brown))
+                        .background(Color(UIColor(named: "Malachite") ?? UIColor.brown))
                         .cornerRadius(10)
                     
                     
@@ -59,8 +59,8 @@ struct LoginView: View {
                             }.font(.headline)
                                 .frame(height:45)
                                 .frame(width: 220)
-                                .foregroundColor(.brown)
-                                .background(Color.white)
+                                .foregroundColor(Color(UIColor(named: "Isabelline") ?? UIColor.brown))
+                                .background(Color(UIColor(named: "Malachite") ?? UIColor.brown))
                                 .cornerRadius(10)
                             
                         } else if showLogin{
@@ -78,8 +78,8 @@ struct LoginView: View {
                             }.font(.headline)
                                 .frame(height:45)
                                 .frame(width: 220)
-                                .foregroundColor(.brown)
-                                .background(Color.white)
+                                .foregroundColor(Color(UIColor(named: "Isabelline") ?? UIColor.brown))
+                                .background(Color(UIColor(named: "Malachite") ?? UIColor.brown))
                                 .cornerRadius(10)
                                
                             
@@ -96,13 +96,13 @@ struct LoginView: View {
                         VStack {
                             TextField("Login", text: $login)
                                 .padding(10)
-                                .foregroundColor(.brown)
-                                .background(Color.white)
+                                .foregroundColor(Color(UIColor(named: "Isabelline") ?? UIColor.brown))
+                                .background(Color(UIColor(named: "Malachite") ?? UIColor.brown))
                                 .cornerRadius(5.0)
                             SecureField("Password", text: $password)
                                 .padding(10)
-                                .foregroundColor(.brown)
-                                .background(Color.white)
+                                .foregroundColor(Color(UIColor(named: "Isabelline") ?? UIColor.brown))
+                                .background(Color(UIColor(named: "Malachite") ?? UIColor.brown))
                                 .cornerRadius(5.0)
                            
                             Button(action: {
@@ -119,8 +119,8 @@ struct LoginView: View {
                             .font(.headline)
                             .frame(height:45)
                             .frame(width: 100)
-                            .foregroundColor(.brown)
-                            .background(Color.white)
+                            .foregroundColor(Color(UIColor(named: "Isabelline") ?? UIColor.brown))
+                            .background(Color(UIColor(named: "Malachite") ?? UIColor.brown))
                             .cornerRadius(10)
                         }
                         
@@ -129,30 +129,30 @@ struct LoginView: View {
                             TextField("First Name", text: $firstName)
                                 .padding(10)
                                 .autocorrectionDisabled(true)
-                                .foregroundColor(.brown)
-                                .background(Color.white)
+                                .foregroundColor(Color(UIColor(named: "Isabelline") ?? UIColor.brown))
+                                .background(Color(UIColor(named: "Malachite") ?? UIColor.brown))
                                 .cornerRadius(5.0)
                             TextField("Last Name", text: $lastName)
                                 .padding(10)
                                 .autocorrectionDisabled(true)
-                                .foregroundColor(.brown)
-                                .background(Color.white)
+                                .foregroundColor(Color(UIColor(named: "Isabelline") ?? UIColor.brown))
+                                .background(Color(UIColor(named: "Malachite") ?? UIColor.brown))
                                 .cornerRadius(5.0)
                             TextField("Email Address", text: $email)
                                 .padding(10)
                                 .autocorrectionDisabled(true)
-                                .foregroundColor(.brown)
-                                .background(Color.white)
+                                .foregroundColor(Color(UIColor(named: "Isabelline") ?? UIColor.brown))
+                                .background(Color(UIColor(named: "Malachite") ?? UIColor.brown))
                                 .cornerRadius(5.0)
                             SecureField("Password", text: $password)
                                 .padding(10)
-                                .foregroundColor(.brown)
-                                .background(Color.white)
+                                .foregroundColor(Color(UIColor(named: "Isabelline") ?? UIColor.brown))
+                                .background(Color(UIColor(named: "Malachite") ?? UIColor.brown))
                                 .cornerRadius(5.0)
                             SecureField("Confirm Password", text: $passwordConfirm)
                                 .padding(10)
-                                .foregroundColor(.brown)
-                                .background(Color.white)
+                                .foregroundColor(Color(UIColor(named: "Isabelline") ?? UIColor.brown))
+                                .background(Color(UIColor(named: "Malachite") ?? UIColor.brown))
                                 .cornerRadius(5.0)
                             
                             
@@ -173,8 +173,8 @@ struct LoginView: View {
                             .font(.headline)
                             .frame(height:45)
                             .frame(width: 100)
-                            .foregroundColor(.brown)
-                            .background(Color.white)
+                            .foregroundColor(Color(UIColor(named: "Isabelline") ?? UIColor.brown))
+                            .background(Color(UIColor(named: "Malachite") ?? UIColor.brown))
                             .cornerRadius(10)
                             
                         }
