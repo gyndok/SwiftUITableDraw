@@ -43,29 +43,8 @@ struct TourneyListView: View {
                 
                 userDefaults.set(searchPlayer, forKey: K.searchPlayerNameKey)
                 tourneys.removeAll()
-                
-                db.collection("PokerPlayers").whereField("player", isEqualTo: searchPlayer)
-                    .getDocuments() { (querySnapshot, err) in
-                        if let err = err {
-                            print("Error getting documents: \(err)")
-                        } else {
-                            for document in querySnapshot!.documents {
-                                let data = document.data()
-                                if let festival = data["festival"] as? String,
-                                   let game = data["event"] as? String,
-                                   let event = data["event"] as? String,
-                                   let tableNumber = data["tableNumber"] as? Int,
-                                   let seatNumber = data["seatNumber"] as? Int,
-                                   let day = data["day"] as? Int,
-                                   let date = data["restartDate2"] as? String {
-                                    let tourney = TableDrawModel(festival: festival, game: game, event: event, tableNumber: tableNumber, seatNumber: seatNumber, day: day, date: date)
-                                    print(tourney.festival)
-                                    print(tourney.event)
-                                    tourneys.append(tourney)
-                                }
-                            }
-                        }
-                    }
+                fetchTourneys()
+               
                 
             }, label: {
                 Text("Find The Tables")
@@ -76,9 +55,6 @@ struct TourneyListView: View {
                     .background(Color.white)
                     .cornerRadius(10)
             })
-            
-            
-            
             .padding()
             .background(
                 Color.brown)
@@ -86,7 +62,6 @@ struct TourneyListView: View {
                     radius: 10,
                     x: 0.0, y:12)
         }
-        
         
         List {
             ForEach(tourneys) { tourney in
@@ -97,33 +72,35 @@ struct TourneyListView: View {
         }
         .listStyle(PlainListStyle())
     }
-}
-
     
-    //  func fetchTourneys(){
-    //        db.collection("PokerPlayers").whereField("player", isEqualTo: searchPlayer)
-    //            .getDocuments() { (querySnapshot, err) in
-    //                if let err = err {
-    //                    print("Error getting documents: \(err)")
-    //                } else {
-    //                    for document in querySnapshot!.documents {
-    //                        let data = document.data()
-    //                        if let festival = data["festival"] as? String,
-    //                           let game = data["event"] as? String,
-    //                           let event = data["event"] as? String,
-    //                           let tableNumber = data["tableNumber"] as? Int,
-    //                           let seatNumber = data["seatNumber"] as? Int,
-    //                           let day = data["day"] as? Int,
-    //                           let date = data["restartDate2"] as? String {
-    //                            let tourney = TableDrawModel(festival: festival, game: game, event: event, tableNumber: tableNumber, seatNumber: seatNumber, day: day, date: date)
-    //                            print(tourney.festival)
-    //                            print(tourney.event)
-    //                            tourneys.append(tourney)
-    //                        }
-    //                    }
-    //                }
-    //            }
-    //    }
+    
+    
+    func fetchTourneys(){
+        db.collection("PokerPlayers").whereField("player", isEqualTo: searchPlayer)
+            .getDocuments() { (querySnapshot, err) in
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                } else {
+                    for document in querySnapshot!.documents {
+                        let data = document.data()
+                        if let festival = data["festival"] as? String,
+                           let game = data["event"] as? String,
+                           let event = data["event"] as? String,
+                           let tableNumber = data["tableNumber"] as? Int,
+                           let seatNumber = data["seatNumber"] as? Int,
+                           let day = data["day"] as? Int,
+                           let date = data["restartDate2"] as? String {
+                            let tourney = TableDrawModel(festival: festival, game: game, event: event, tableNumber: tableNumber, seatNumber: seatNumber, day: day, date: date)
+                            print(tourney.festival)
+                            print(tourney.event)
+                            tourneys.append(tourney)
+                        }
+                    }
+                }
+            }
+        
+    }
+}
     
 
 
