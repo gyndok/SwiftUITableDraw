@@ -12,17 +12,15 @@ import FirebaseAuth
 let LoginUserDefaults = UserDefaults.standard
 
 struct LoginView: View {
-    @State private var showLogin = true
-    @State private var login = ""
-    @State private var password = ""
-    @State private var firstName = ""
-    @State private var lastName = ""
-    @State private var email = ""
-    @State private var passwordConfirm = ""
+    @ObservedObject private var viewModel: LoginViewModel
+  
+  init(viewModel: LoginViewModel) {
+    self.viewModel = viewModel
+  }
     
     var body: some View {
         
-        NavigationStack {
+        NavigationView {
             ZStack (alignment: .top) {
                 Color(UIColor(named: "Gunmetal") ?? UIColor.brown)
                     .ignoresSafeArea(.all)
@@ -36,34 +34,25 @@ struct LoginView: View {
                             .frame (width: 170, height: 170)
                         
                         HStack {
-                            if !showLogin {
+                          if viewModel.state == .register {
                                 Button(action: {
-                                    self.showLogin.toggle()
-                                    password = ""
-                                    login = ""
-                                    firstName = ""
-                                    lastName = ""
-                                    email = ""
-                                    passwordConfirm = ""
+                                  viewModel.switchToLoginTapped()
                                 }) {
                                     Text("Switch to Login")
                                     
                                         .font(.headline)
-                                }.font(.headline)
+                                }
+                                .font(.headline)
                                     .frame(height:45)
                                     .frame(width: 220)
                                     .foregroundColor(Color(UIColor(named: "Gunmetal") ?? UIColor.brown))
                                     .background(Color(UIColor(named: "Saffron") ?? UIColor.brown))
                                     .cornerRadius(10)
                                 
-                            } else if showLogin{
+                          } else if viewModel.state == .login {
                                 Button(action: {
-                                    self.showLogin.toggle()
-                                    password = ""
-                                    login = ""
-                                    firstName = ""
-                                    lastName = ""
-                                    email = ""
+                                    
+                                  viewModel.switchToRegistrationTapped()
                                 }) {
                                     Text("I Am New Here")
                                         .font(.headline)
@@ -74,79 +63,67 @@ struct LoginView: View {
                                     .foregroundColor(Color(UIColor(named: "Gunmetal") ?? UIColor.brown))
                                     .background(Color(UIColor(named: "Saffron") ?? UIColor.brown))
                                     .cornerRadius(10)
-                                
-                                
                             }
-                            
-                            
-                            
                         }
-                        //.padding()
-                        
-                        
-                        
-                        if showLogin {
+                        if viewModel.state == .login {
                             VStack {
-                                TextField("Login", text: $login)
+                              TextField("Login", text: $viewModel.loginForm.email)
                                     .padding(10)
                                     .foregroundColor(Color(UIColor(named: "Gunmetal") ?? UIColor.brown))
                                     .background(Color(UIColor(named: "Saffron") ?? UIColor.brown))
                                     .cornerRadius(5.0)
-                                SecureField("Password", text: $password)
+                                SecureField("Password", text: $viewModel.loginForm.password)
                                     .padding(10)
                                     .foregroundColor(Color(UIColor(named: "Gunmetal") ?? UIColor.brown))
                                     .background(Color(UIColor(named: "Saffron") ?? UIColor.brown))
                                     .cornerRadius(5.0)
-                                NavigationLink(destination: TourneyListView()){
-                                    Button(action: {
-                                        loginUser()
-                                    }) {
-                                        Text("Sign In")
-                                    }
-                                    .font(.headline)
-                                    .frame(height:45)
-                                    .frame(width: 100)
-                                    .foregroundColor(Color(UIColor(named: "Gunmetal") ?? UIColor.brown))
-                                    .background(Color(UIColor(named: "Saffron") ?? UIColor.brown))
-                                    .cornerRadius(10)
-                                }
+                              
+                              Button {
+                                viewModel.loginButtonTapped()
+                              } label: {
+                                Text("Sign In")
+                                  .font(.headline)
+                                  .frame(height:45)
+                                  .frame(width: 100)
+                                  .foregroundColor(Color(UIColor(named: "Gunmetal") ?? UIColor.brown))
+                                  .background(Color(UIColor(named: "Saffron") ?? UIColor.brown))
+                                  .cornerRadius(10)
+                              }
                             }
                             
                         } else {
                             VStack {
-                                TextField("First Name", text: $firstName)
+                              TextField("First Name", text: $viewModel.registrationForm.firstName)
                                     .padding(10)
                                     .autocorrectionDisabled(true)
                                     .foregroundColor(Color(UIColor(named: "Gunmetal") ?? UIColor.brown))
                                     .background(Color(UIColor(named: "Saffron") ?? UIColor.brown))
                                     .cornerRadius(5.0)
-                                TextField("Last Name", text: $lastName)
+                              TextField("Last Name", text: $viewModel.registrationForm.lastName)
                                     .padding(10)
                                     .autocorrectionDisabled(true)
                                     .foregroundColor(Color(UIColor(named: "Gunmetal") ?? UIColor.brown))
                                     .background(Color(UIColor(named: "Saffron") ?? UIColor.brown))
                                     .cornerRadius(5.0)
-                                TextField("Email Address", text: $email)
+                              TextField("Email Address", text: $viewModel.registrationForm.email)
                                     .padding(10)
                                     .autocorrectionDisabled(true)
                                     .foregroundColor(Color(UIColor(named: "Gunmetal") ?? UIColor.brown))
                                     .background(Color(UIColor(named: "Saffron") ?? UIColor.brown))
                                     .cornerRadius(5.0)
-                                SecureField("Password", text: $password)
+                              SecureField("Password", text: $viewModel.registrationForm.password)
                                     .padding(10)
                                     .foregroundColor(Color(UIColor(named: "Gunmetal") ?? UIColor.brown))
                                     .background(Color(UIColor(named: "Saffron") ?? UIColor.brown))
                                     .cornerRadius(5.0)
-                                SecureField("Confirm Password", text: $passwordConfirm)
+                              SecureField("Confirm Password", text: $viewModel.registrationForm.confirmationPassword)
                                     .padding(10)
                                     .foregroundColor(Color(UIColor(named: "Gunmetal") ?? UIColor.brown))
                                     .background(Color(UIColor(named: "Saffron") ?? UIColor.brown))
                                     .cornerRadius(5.0)
-                                
-                                
                                 
                                 Button(action: {
-                                    newUser()
+                                  viewModel.registerUserButtonTapped()
                                 }) {
                                     Text("Register")
                                 }
@@ -164,38 +141,12 @@ struct LoginView: View {
             }
         }
     }
-    
-    func loginUser(){
-        Auth.auth().signIn(withEmail: self.login, password: self.password) { (result, error) in
-            if error != nil {
-                print("Login failed: \(error!.localizedDescription)")
-                return
-            }
-            print("Login successful")
-        }
-    }
-    
-    func newUser(){
-        Auth.auth().createUser(withEmail: self.email, password: self.password) { (result, error) in
-            if error != nil {
-                print("Registration failed: \(error!.localizedDescription)")
-                return
-            }
-            print("Registration successful")
-        }
-    }
 }
-
-
-
-
-
-
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView(){
-            LoginView()
+            LoginView(viewModel: LoginViewModel(rootViewModel: RootViewModel()))
         }
     }
 }
