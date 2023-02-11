@@ -31,7 +31,7 @@ struct LoginView: View {
                         
                         Image("Logo")
                             .resizable()
-                            .frame (width: 170, height: 170)
+                            .frame (width: 250, height: 250)
                         
                         HStack {
                           if viewModel.state == .register {
