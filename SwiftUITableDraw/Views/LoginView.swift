@@ -106,7 +106,7 @@ struct LoginView: View {
                             }
                         }
                     }
-                }
+                } 
             }
         }
     }
