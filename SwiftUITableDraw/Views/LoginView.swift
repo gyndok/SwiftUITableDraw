@@ -29,9 +29,9 @@ struct LoginView: View {
                     VStack (alignment: .center, spacing: 10){
                         
                         
-                        Image("Logo")
+                        Image("Original Logo")
                             .resizable()
-                            .frame (width: 250, height: 250)
+                            .frame (width: 250, height: 190)
                         
                         HStack {
                           if viewModel.state == .register {
