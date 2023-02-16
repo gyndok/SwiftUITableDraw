@@ -9,6 +9,17 @@ import SwiftUI
 
 struct PlayerListView: View {
     
+    /*
+     I want to figure out how to receive the clicked tourney from the
+     TourneyListView and load it into a @State var tourney.  This will
+     load the data at the first part of the Vstack
+     
+     Then it needs to do an automatic search of the Firestore for the table,
+     receive the data and display the players at the table.
+     */
+    
+ //   @State var tourney: TableDrawModel
+    
     @State var players: [PlayerModel] = [
         PlayerModel(playerName: "Geffrey Klein", hometown: "Houston, Texas", tableNumber: 278, seatNumber: 3, chipCount: "$236,000", bigBlinds: 23.6),
         PlayerModel(playerName: "Sean Grover", hometown: "WESTMONT, QC, CA", tableNumber: 278, seatNumber: 1, chipCount: "$492,000", bigBlinds: 49.2),
@@ -19,8 +30,7 @@ struct PlayerListView: View {
 
         
         ZStack {
-//            Color.brown
-//                .edgesIgnoringSafeArea(.all)
+
             VStack {
                
                 Text("2011 42nd Annual World Series of Poker")

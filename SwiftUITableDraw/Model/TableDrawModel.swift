@@ -8,6 +8,7 @@
 import Foundation
 
 struct TableDrawModel: Codable, Hashable, Identifiable {
+
     var id: String = UUID().uuidString
     let festival: String
     let game: String

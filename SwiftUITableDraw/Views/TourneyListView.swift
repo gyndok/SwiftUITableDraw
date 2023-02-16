@@ -13,6 +13,12 @@ import Firebase
 import FirebaseCore
 import FirebaseFirestore
 
+/*
+ I want to figure out how to send the clicked tourney from the
+ TourneyListView and load it into a @State var tourney in the PlayerListView.
+
+ */
+
 
 let userDefaults = UserDefaults.standard
 
@@ -23,7 +29,12 @@ struct TourneyListView: View {
     @State var tables: [PlayerTable] = []
     @State var tourneys: [TableDrawModel] = []
     
+    //@AppStorage(K.searchPlayerNameKey) var searchPlayer: String?
+    
+    
     @State var searchPlayer: String = userDefaults.object(forKey: K.searchPlayerNameKey) as? String ?? ""
+    
+   
     
     
   var body: some View {
@@ -32,9 +43,6 @@ struct TourneyListView: View {
       VStack (spacing: 10) {
         TextField("Who are you looking for?", text: $searchPlayer)
           .autocorrectionDisabled(true)
-          .onTapGesture {
-            print("tapped")
-          }
           .padding(.horizontal)
           .frame(height: 55)
           .background(Color(.systemGray6))
@@ -61,19 +69,30 @@ struct TourneyListView: View {
         .shadow(color: Color.black.opacity(0.3),
                 radius: 10,
                 x: 0.0, y:12)
+          
+
         List {
           ForEach(tourneys) { tourney in
-            NavigationLink(destination: PlayerListView()) {
+              NavigationLink(destination: PlayerListView()) {
               TourneyCell(tourney: tourney)
             }
-          }
+              
+
         }
+        }
+          
+        
+
+
         .listStyle(PlainListStyle())
       }
     }
+    
   }
     
-    
+    /*
+     Can we find a way to change the search to not require the player name exactly match but be contained.  for example if someone just searched a last name of a first name.
+     */
     
     func fetchTourneys(){
         db.collection("PokerPlayers").whereField("player", isEqualTo: searchPlayer)
