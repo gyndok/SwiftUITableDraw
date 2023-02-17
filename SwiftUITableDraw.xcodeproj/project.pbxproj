@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2BB152EA29A01E030087ADCC /* Tournament.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB152E929A01E030087ADCC /* Tournament.swift */; };
+		2BB152EC29A01EE30087ADCC /* TournamentDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB152EB29A01EE20087ADCC /* TournamentDay.swift */; };
+		2BB152EE29A01F580087ADCC /* Table.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB152ED29A01F580087ADCC /* Table.swift */; };
+		2BB152F029A01FCF0087ADCC /* TablePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB152EF29A01FCF0087ADCC /* TablePlayer.swift */; };
+		2BB152F229A0203B0087ADCC /* PokerPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB152F129A0203B0087ADCC /* PokerPlayer.swift */; };
 		2BC299012996DB6A00C00BFE /* NavigationExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC299002996DB6A00C00BFE /* NavigationExample.swift */; };
 		2BC299042996DEDB00C00BFE /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC299032996DEDA00C00BFE /* LoginViewModel.swift */; };
 		2BC299062996E53500C00BFE /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC299052996E53500C00BFE /* RootView.swift */; };
@@ -33,6 +38,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2BB152E929A01E030087ADCC /* Tournament.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tournament.swift; sourceTree = "<group>"; };
+		2BB152EB29A01EE20087ADCC /* TournamentDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentDay.swift; sourceTree = "<group>"; };
+		2BB152ED29A01F580087ADCC /* Table.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Table.swift; sourceTree = "<group>"; };
+		2BB152EF29A01FCF0087ADCC /* TablePlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TablePlayer.swift; sourceTree = "<group>"; };
+		2BB152F129A0203B0087ADCC /* PokerPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokerPlayer.swift; sourceTree = "<group>"; };
 		2BC299002996DB6A00C00BFE /* NavigationExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationExample.swift; sourceTree = "<group>"; };
 		2BC299032996DEDA00C00BFE /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		2BC299052996E53500C00BFE /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
@@ -134,6 +144,11 @@
 			children = (
 				44629C6C298D9D34000FCE0B /* TableDrawModel.swift */,
 				44629C72298DADDF000FCE0B /* PlayerModel.swift */,
+				2BB152E929A01E030087ADCC /* Tournament.swift */,
+				2BB152EB29A01EE20087ADCC /* TournamentDay.swift */,
+				2BB152ED29A01F580087ADCC /* Table.swift */,
+				2BB152EF29A01FCF0087ADCC /* TablePlayer.swift */,
+				2BB152F129A0203B0087ADCC /* PokerPlayer.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -232,19 +247,24 @@
 			files = (
 				44629C71298DAD93000FCE0B /* PlayerCell.swift in Sources */,
 				44629C73298DADDF000FCE0B /* PlayerModel.swift in Sources */,
+				2BB152F229A0203B0087ADCC /* PokerPlayer.swift in Sources */,
 				442EDE24298E9EEB00382014 /* ModelData.swift in Sources */,
 				44FC1B2B298C910700D807D7 /* SwiftUITableDrawApp.swift in Sources */,
+				2BB152EC29A01EE30087ADCC /* TournamentDay.swift in Sources */,
 				2BC299062996E53500C00BFE /* RootView.swift in Sources */,
 				44FC1B3D298C91D900D807D7 /* TourneyCell.swift in Sources */,
 				449704ED29901A52004CD71D /* Constants.swift in Sources */,
 				448025AB298E0EEE009736D2 /* PlayerDetailView.swift in Sources */,
+				2BB152EA29A01E030087ADCC /* Tournament.swift in Sources */,
 				44FC1B3B298C919500D807D7 /* TourneyListView.swift in Sources */,
 				2BC299042996DEDB00C00BFE /* LoginViewModel.swift in Sources */,
+				2BB152EE29A01F580087ADCC /* Table.swift in Sources */,
 				2BC299082996E54500C00BFE /* RootViewModel.swift in Sources */,
 				442882FC29933D940034C949 /* LoginView.swift in Sources */,
 				44629C6F298DAD82000FCE0B /* PlayerListView.swift in Sources */,
 				2BC299012996DB6A00C00BFE /* NavigationExample.swift in Sources */,
 				44629C6D298D9D34000FCE0B /* TableDrawModel.swift in Sources */,
+				2BB152F029A01FCF0087ADCC /* TablePlayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
