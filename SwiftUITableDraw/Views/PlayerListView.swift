@@ -18,7 +18,7 @@ struct PlayerListView: View {
      receive the data and display the players at the table.
      */
     
- //   @State var tourney: TableDrawModel
+    //@State var tourney: TableDrawModel
     
     @State var players: [PlayerModel] = [
         PlayerModel(playerName: "Geffrey Klein", hometown: "Houston, Texas", tableNumber: 278, seatNumber: 3, chipCount: "$236,000", bigBlinds: 23.6),
