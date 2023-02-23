@@ -12,7 +12,7 @@ struct TourneyCell: View {
     let tourney: Tournament
     
     var body: some View {
-        HStack(spacing: 30){
+        HStack(spacing: 10){
             Image("WSOP")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
@@ -26,7 +26,7 @@ struct TourneyCell: View {
                 VStack{
                 
                   Text(tourney.festival)
-                        .minimumScaleFactor(0.5)
+                        .minimumScaleFactor(0.7)
                         .lineLimit(1)
                         .foregroundColor(.primary)
                         .font(.subheadline)
@@ -35,15 +35,15 @@ struct TourneyCell: View {
                         .underline()
                     
                     Text(tourney.event)
-                        .minimumScaleFactor(0.5)
+                        .minimumScaleFactor(0.7)
                         .lineLimit(1)
                         .foregroundColor(.primary)
                         .font(.subheadline)
                         .fontWeight(.semibold)
                         .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                     HStack{
-//                        Text("Day: \(tourney.day)")
-//                        Text("Restart Date: \(tourney.date)")
+                        Text("Day: Day")
+                        Text("Restart Date: Date")
                     }
                     .foregroundColor(.secondary)
                     .font(.caption)
@@ -51,8 +51,8 @@ struct TourneyCell: View {
                     .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                 HStack {
                    
-//                    Text("Table: \(tourney.tableNumber)")
-//                    Text("Seat: \(tourney.seatNumber)")
+                    Text("Buy In: \(tourney.buyIn)")
+                    Text("Entries: \(tourney.entries)")
                 }
                 .foregroundColor(.secondary)
                 .font(.caption)
@@ -70,16 +70,17 @@ struct TourneyCell: View {
      
 }
 
-//struct TourneyCell_Previews: PreviewProvider {
-////    static var tourney1 =    TableDrawModel(festival: "2023 World Series of Poker", game: "NLHE", event: "Event 1: Casino Employee Event", tableNumber: 91, seatNumber: 8, day: 2, date: "5/31/2023")
-////    static var tourney2 = TableDrawModel(festival: "2022 World Series of Poker", game: "NLHE", event: "Event 10: $1500 NLHE", tableNumber: 119, seatNumber: 9, day: 3, date: "6/30/2022")
-////    static var previews: some View {
-////        Group{
-////            TourneyCell(tourney: tourney1)
-////            TourneyCell(tourney: tourney2)
-////        }
-////        .previewLayout(.sizeThatFits)
-////
-////
-//    }
-//}
+struct TourneyCell_Previews: PreviewProvider {
+    
+    static var tourney1 =  Tournament(buyIn: 1500, days: ["2"], entries: 2000, event: "Millionaire Maker", festival: "2019 WSOP", startingStack: 1500)
+    static var tourney2 =  Tournament(buyIn: 10000, days: ["1"], entries: 7200, event: "Main Event", festival: "2019 WSOP", startingStack: 10000)
+    static var previews: some View {
+        
+        TourneyCell(tourney: tourney1)
+        
+    }
+     
+
+
+    }
+

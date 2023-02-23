@@ -30,7 +30,7 @@ struct TourneyListView: View {
   var body: some View {
     
     NavigationView {
-      VStack (spacing: 10) {
+      VStack (spacing: 5) {
         TextField("Who are you looking for?", text: $searchPlayer)
           .autocorrectionDisabled(true)
           .padding(.horizontal)
@@ -68,8 +68,10 @@ struct TourneyListView: View {
               TourneyCell(tourney: tourney)
             }
           }
+            
         }
         .listStyle(PlainListStyle())
+          
       }
     }
   }
