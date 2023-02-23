@@ -9,20 +9,21 @@ import Foundation
 
 struct Tournament: Decodable {
   let buyIn: UInt
-  let day: [String]
+  let days: [String]
   let entries: UInt
   let event: String
   let festival: String
-  let startDate: TimeInterval
+  
+  // TODO: Figure out how firebase represnts dates
+//  let startDate: TimeInterval
   let startingStack: UInt
   
   enum CodingKeys: String, CodingKey {
     case buyIn = "buy_in"
-    case day
+    case days
     case entries
     case event
     case festival
-    case startDate = "start_date"
     case startingStack = "starting_stack"
   }
 }

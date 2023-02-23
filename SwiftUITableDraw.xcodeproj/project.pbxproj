@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B46CB0829A6F76200ACA33C /* TourneyListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B46CB0729A6F76200ACA33C /* TourneyListViewModel.swift */; };
+		2B46CB0B29A6FE5300ACA33C /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 2B46CB0A29A6FE5300ACA33C /* FirebaseAuth */; };
+		2B46CB0D29A6FE5300ACA33C /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 2B46CB0C29A6FE5300ACA33C /* FirebaseFirestore */; };
+		2B46CB0F29A6FE5300ACA33C /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2B46CB0E29A6FE5300ACA33C /* FirebaseFirestoreSwift */; };
 		2BB152EA29A01E030087ADCC /* Tournament.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB152E929A01E030087ADCC /* Tournament.swift */; };
 		2BB152EC29A01EE30087ADCC /* TournamentDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB152EB29A01EE20087ADCC /* TournamentDay.swift */; };
 		2BB152EE29A01F580087ADCC /* Table.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB152ED29A01F580087ADCC /* Table.swift */; };
@@ -23,9 +27,6 @@
 		44629C6F298DAD82000FCE0B /* PlayerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44629C6E298DAD82000FCE0B /* PlayerListView.swift */; };
 		44629C71298DAD93000FCE0B /* PlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44629C70298DAD93000FCE0B /* PlayerCell.swift */; };
 		44629C73298DADDF000FCE0B /* PlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44629C72298DADDF000FCE0B /* PlayerModel.swift */; };
-		44696B53298F1F0D007CB53A /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 44696B52298F1F0D007CB53A /* FirebaseAuth */; };
-		44696B55298F1F0D007CB53A /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 44696B54298F1F0D007CB53A /* FirebaseFirestore */; };
-		44696B57298F1F0D007CB53A /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = 44696B56298F1F0D007CB53A /* FirebaseFunctions */; };
 		448025AB298E0EEE009736D2 /* PlayerDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448025AA298E0EEE009736D2 /* PlayerDetailView.swift */; };
 		449704ED29901A52004CD71D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449704EC29901A52004CD71D /* Constants.swift */; };
 		44AD5B6F298EDDE5002EC96D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44AD5B6E298EDDE5002EC96D /* LaunchScreen.storyboard */; };
@@ -38,6 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2B46CB0729A6F76200ACA33C /* TourneyListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourneyListViewModel.swift; sourceTree = "<group>"; };
 		2BB152E929A01E030087ADCC /* Tournament.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tournament.swift; sourceTree = "<group>"; };
 		2BB152EB29A01EE20087ADCC /* TournamentDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentDay.swift; sourceTree = "<group>"; };
 		2BB152ED29A01F580087ADCC /* Table.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Table.swift; sourceTree = "<group>"; };
@@ -73,9 +75,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				44696B57298F1F0D007CB53A /* FirebaseFunctions in Frameworks */,
-				44696B53298F1F0D007CB53A /* FirebaseAuth in Frameworks */,
-				44696B55298F1F0D007CB53A /* FirebaseFirestore in Frameworks */,
+				2B46CB0B29A6FE5300ACA33C /* FirebaseAuth in Frameworks */,
+				2B46CB0D29A6FE5300ACA33C /* FirebaseFirestore in Frameworks */,
+				2B46CB0F29A6FE5300ACA33C /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,6 +161,7 @@
 				442EDE23298E9EEB00382014 /* ModelData.swift */,
 				449704EC29901A52004CD71D /* Constants.swift */,
 				2BC299032996DEDA00C00BFE /* LoginViewModel.swift */,
+				2B46CB0729A6F76200ACA33C /* TourneyListViewModel.swift */,
 				2BC299072996E54500C00BFE /* RootViewModel.swift */,
 			);
 			path = "View Model";
@@ -181,9 +184,9 @@
 			);
 			name = SwiftUITableDraw;
 			packageProductDependencies = (
-				44696B52298F1F0D007CB53A /* FirebaseAuth */,
-				44696B54298F1F0D007CB53A /* FirebaseFirestore */,
-				44696B56298F1F0D007CB53A /* FirebaseFunctions */,
+				2B46CB0A29A6FE5300ACA33C /* FirebaseAuth */,
+				2B46CB0C29A6FE5300ACA33C /* FirebaseFirestore */,
+				2B46CB0E29A6FE5300ACA33C /* FirebaseFirestoreSwift */,
 			);
 			productName = SwiftUITableDraw;
 			productReference = 44FC1B27298C910700D807D7 /* SwiftUITableDraw.app */;
@@ -214,7 +217,7 @@
 			);
 			mainGroup = 44FC1B1E298C910600D807D7;
 			packageReferences = (
-				44696B51298F1F0D007CB53A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				2B46CB0929A6FE5300ACA33C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 44FC1B28298C910700D807D7 /* Products */;
 			projectDirPath = "";
@@ -256,6 +259,7 @@
 				449704ED29901A52004CD71D /* Constants.swift in Sources */,
 				448025AB298E0EEE009736D2 /* PlayerDetailView.swift in Sources */,
 				2BB152EA29A01E030087ADCC /* Tournament.swift in Sources */,
+				2B46CB0829A6F76200ACA33C /* TourneyListViewModel.swift in Sources */,
 				44FC1B3B298C919500D807D7 /* TourneyListView.swift in Sources */,
 				2BC299042996DEDB00C00BFE /* LoginViewModel.swift in Sources */,
 				2BB152EE29A01F580087ADCC /* Table.swift in Sources */,
@@ -473,7 +477,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		44696B51298F1F0D007CB53A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+		2B46CB0929A6FE5300ACA33C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
 			requirement = {
@@ -484,20 +488,20 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		44696B52298F1F0D007CB53A /* FirebaseAuth */ = {
+		2B46CB0A29A6FE5300ACA33C /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 44696B51298F1F0D007CB53A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = 2B46CB0929A6FE5300ACA33C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;
 		};
-		44696B54298F1F0D007CB53A /* FirebaseFirestore */ = {
+		2B46CB0C29A6FE5300ACA33C /* FirebaseFirestore */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 44696B51298F1F0D007CB53A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = 2B46CB0929A6FE5300ACA33C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestore;
 		};
-		44696B56298F1F0D007CB53A /* FirebaseFunctions */ = {
+		2B46CB0E29A6FE5300ACA33C /* FirebaseFirestoreSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 44696B51298F1F0D007CB53A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseFunctions;
+			package = 2B46CB0929A6FE5300ACA33C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

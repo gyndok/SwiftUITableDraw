@@ -16,27 +16,17 @@ import FirebaseFirestore
 /*
  I want to figure out how to send the clicked tourney from the
  TourneyListView and load it into a @State var tourney in the PlayerListView.
-
+ 
  */
 
 
 let userDefaults = UserDefaults.standard
 
 struct TourneyListView: View {
-    
-    let db = Firestore.firestore()
-    
-    @State var tables: [PlayerTable] = []
-    @State var tourneys: [TableDrawModel] = []
-    
-    //@AppStorage(K.searchPlayerNameKey) var searchPlayer: String?
-    
-    
-    @State var searchPlayer: String = userDefaults.object(forKey: K.searchPlayerNameKey) as? String ?? ""
-    
-   
-    
-    
+  
+  @ObservedObject private var viewModel = TourneyListViewModel()
+  @State private var searchPlayer = ""
+  
   var body: some View {
     
     NavigationView {
@@ -50,8 +40,8 @@ struct TourneyListView: View {
         Button (action:{
           
           userDefaults.set(searchPlayer, forKey: K.searchPlayerNameKey)
-          tourneys.removeAll()
-          fetchTourneys()
+          viewModel.tournaments.removeAll()
+          viewModel.executeTournamentSearch(for: searchPlayer)
           
           
         }, label: {
@@ -69,71 +59,34 @@ struct TourneyListView: View {
         .shadow(color: Color.black.opacity(0.3),
                 radius: 10,
                 x: 0.0, y:12)
-          
-
+        
+        
         List {
-          ForEach(tourneys) { tourney in
-              NavigationLink(destination: PlayerListView()) {
+          ForEach(viewModel.tournaments.indices, id: \.self) { index in
+            let tourney = viewModel.tournaments[index]
+            NavigationLink(destination: PlayerListView()) {
               TourneyCell(tourney: tourney)
             }
-              
-
+          }
         }
-        }
-          
-        
-
-
         .listStyle(PlainListStyle())
       }
     }
-    
   }
-    
-    /*
-     Can we find a way to change the search to not require the player name exactly match but be contained.  for example if someone just searched a last name of a first name.
-     */
-    
-    func fetchTourneys(){
-        db.collection("PokerPlayers").whereField("player", isEqualTo: searchPlayer)
-            .getDocuments() { (querySnapshot, err) in
-                if let err = err {
-                    print("Error getting documents: \(err)")
-                } else {
-                    for document in querySnapshot!.documents {
-                        let data = document.data()
-                        if let festival = data["festival"] as? String,
-                           let game = data["event"] as? String,
-                           let event = data["event"] as? String,
-                           let tableNumber = data["tableNumber"] as? Int,
-                           let seatNumber = data["seatNumber"] as? Int,
-                           let day = data["day"] as? Int,
-                           let date = data["restartDate2"] as? String {
-                            let tourney = TableDrawModel(festival: festival, game: game, event: event, tableNumber: tableNumber, seatNumber: seatNumber, day: day, date: date)
-                            print(tourney.festival)
-                            print(tourney.event)
-                            tourneys.append(tourney)
-                        }
-                    }
-                }
-            }
-        
-    }
 }
-    
-
-
-
-
-
-
-struct TourneyListView_Previews: PreviewProvider {
+  
+  
+  
+  
+  
+  
+  struct TourneyListView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationStack{
-            TourneyListView()
-        }
+      NavigationStack{
+        TourneyListView()
+      }
     }
-}
-
-
-
+  }
+  
+  
+  
