@@ -8,6 +8,14 @@
 import SwiftUI
 
 struct PlayerListView: View {
+  
+  @ObservedObject private var viewModel: PlayerListViewModel
+  private let tourney: Tournament
+  
+  init(tourney: Tournament) {
+    self.tourney = tourney
+    self.viewModel = PlayerListViewModel(player: PokerPlayer(firstName: "", lastName: "", hendonmobURL: "", hometown: "", tournaments: [], participatedTables: ["GcqfUWnidbrGd6sD1Tm8"]), tourney: tourney)
+  }
     
     /*
      I want to figure out how to receive the clicked tourney from the
@@ -97,7 +105,7 @@ struct PlayerListView: View {
 struct PlayerListView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack{
-            PlayerListView()
+            PlayerListView(tourney: Tournament(buyIn: 1000, days: [], entries: 1000, event: "TEST", festival: "TEST", startingStack: 1000))
         }
     }
 }

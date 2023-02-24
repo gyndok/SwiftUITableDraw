@@ -13,6 +13,7 @@ struct PokerPlayer: Decodable {
   let hendonmobURL: String
   let hometown: String
   let tournaments: [String]
+  let participatedTables: [String]
 
   enum CodingKeys: String, CodingKey {
     case firstName = "first_name"
@@ -20,5 +21,6 @@ struct PokerPlayer: Decodable {
     case hendonmobURL = "hendonmob_url"
     case hometown = "hometown"
     case tournaments
+    case participatedTables = "participated_tables"
   }
 }

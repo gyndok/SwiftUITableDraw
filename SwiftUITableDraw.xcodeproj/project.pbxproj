@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B25876629A953660081410C /* PlayerListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B25876529A953660081410C /* PlayerListViewModel.swift */; };
 		2B46CB0829A6F76200ACA33C /* TourneyListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B46CB0729A6F76200ACA33C /* TourneyListViewModel.swift */; };
 		2B46CB0B29A6FE5300ACA33C /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 2B46CB0A29A6FE5300ACA33C /* FirebaseAuth */; };
 		2B46CB0D29A6FE5300ACA33C /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 2B46CB0C29A6FE5300ACA33C /* FirebaseFirestore */; };
@@ -39,6 +40,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2B25876529A953660081410C /* PlayerListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerListViewModel.swift; sourceTree = "<group>"; };
 		2B46CB0729A6F76200ACA33C /* TourneyListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourneyListViewModel.swift; sourceTree = "<group>"; };
 		2BB152E929A01E030087ADCC /* Tournament.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tournament.swift; sourceTree = "<group>"; };
 		2BB152EB29A01EE20087ADCC /* TournamentDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentDay.swift; sourceTree = "<group>"; };
@@ -110,7 +112,7 @@
 				44FC1B2A298C910700D807D7 /* SwiftUITableDrawApp.swift */,
 				44FC1B3E298C91E200D807D7 /* Views */,
 				44FC1B3F298C924800D807D7 /* Model */,
-				44FC1B40298C925800D807D7 /* View Model */,
+				44FC1B40298C925800D807D7 /* ViewModel */,
 				44FC1B2E298C910A00D807D7 /* Assets.xcassets */,
 				44FC1B30298C910A00D807D7 /* Preview Content */,
 			);
@@ -155,16 +157,17 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		44FC1B40298C925800D807D7 /* View Model */ = {
+		44FC1B40298C925800D807D7 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 				442EDE23298E9EEB00382014 /* ModelData.swift */,
 				449704EC29901A52004CD71D /* Constants.swift */,
 				2BC299032996DEDA00C00BFE /* LoginViewModel.swift */,
 				2B46CB0729A6F76200ACA33C /* TourneyListViewModel.swift */,
+				2B25876529A953660081410C /* PlayerListViewModel.swift */,
 				2BC299072996E54500C00BFE /* RootViewModel.swift */,
 			);
-			path = "View Model";
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,6 +266,7 @@
 				44FC1B3B298C919500D807D7 /* TourneyListView.swift in Sources */,
 				2BC299042996DEDB00C00BFE /* LoginViewModel.swift in Sources */,
 				2BB152EE29A01F580087ADCC /* Table.swift in Sources */,
+				2B25876629A953660081410C /* PlayerListViewModel.swift in Sources */,
 				2BC299082996E54500C00BFE /* RootViewModel.swift in Sources */,
 				442882FC29933D940034C949 /* LoginView.swift in Sources */,
 				44629C6F298DAD82000FCE0B /* PlayerListView.swift in Sources */,
