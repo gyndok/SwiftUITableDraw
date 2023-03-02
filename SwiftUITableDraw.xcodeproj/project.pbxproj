@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2B25876629A953660081410C /* PlayerListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B25876529A953660081410C /* PlayerListViewModel.swift */; };
+		2B25878629B035250081410C /* PlayerSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B25878529B035250081410C /* PlayerSearchView.swift */; };
+		2B25878829B035980081410C /* PlayerSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B25878729B035980081410C /* PlayerSearchViewModel.swift */; };
 		2B46CB0829A6F76200ACA33C /* TourneyListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B46CB0729A6F76200ACA33C /* TourneyListViewModel.swift */; };
 		2B46CB0B29A6FE5300ACA33C /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 2B46CB0A29A6FE5300ACA33C /* FirebaseAuth */; };
 		2B46CB0D29A6FE5300ACA33C /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 2B46CB0C29A6FE5300ACA33C /* FirebaseFirestore */; };
@@ -41,6 +43,8 @@
 
 /* Begin PBXFileReference section */
 		2B25876529A953660081410C /* PlayerListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerListViewModel.swift; sourceTree = "<group>"; };
+		2B25878529B035250081410C /* PlayerSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSearchView.swift; sourceTree = "<group>"; };
+		2B25878729B035980081410C /* PlayerSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSearchViewModel.swift; sourceTree = "<group>"; };
 		2B46CB0729A6F76200ACA33C /* TourneyListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourneyListViewModel.swift; sourceTree = "<group>"; };
 		2BB152E929A01E030087ADCC /* Tournament.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tournament.swift; sourceTree = "<group>"; };
 		2BB152EB29A01EE20087ADCC /* TournamentDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentDay.swift; sourceTree = "<group>"; };
@@ -134,6 +138,7 @@
 				44FC1B3A298C919500D807D7 /* TourneyListView.swift */,
 				44629C70298DAD93000FCE0B /* PlayerCell.swift */,
 				44629C6E298DAD82000FCE0B /* PlayerListView.swift */,
+				2B25878529B035250081410C /* PlayerSearchView.swift */,
 				448025AA298E0EEE009736D2 /* PlayerDetailView.swift */,
 				44AD5B6E298EDDE5002EC96D /* LaunchScreen.storyboard */,
 				442882FB29933D940034C949 /* LoginView.swift */,
@@ -164,6 +169,7 @@
 				449704EC29901A52004CD71D /* Constants.swift */,
 				2BC299032996DEDA00C00BFE /* LoginViewModel.swift */,
 				2B46CB0729A6F76200ACA33C /* TourneyListViewModel.swift */,
+				2B25878729B035980081410C /* PlayerSearchViewModel.swift */,
 				2B25876529A953660081410C /* PlayerListViewModel.swift */,
 				2BC299072996E54500C00BFE /* RootViewModel.swift */,
 			);
@@ -264,7 +270,9 @@
 				2BB152EA29A01E030087ADCC /* Tournament.swift in Sources */,
 				2B46CB0829A6F76200ACA33C /* TourneyListViewModel.swift in Sources */,
 				44FC1B3B298C919500D807D7 /* TourneyListView.swift in Sources */,
+				2B25878829B035980081410C /* PlayerSearchViewModel.swift in Sources */,
 				2BC299042996DEDB00C00BFE /* LoginViewModel.swift in Sources */,
+				2B25878629B035250081410C /* PlayerSearchView.swift in Sources */,
 				2BB152EE29A01F580087ADCC /* Table.swift in Sources */,
 				2B25876629A953660081410C /* PlayerListViewModel.swift in Sources */,
 				2BC299082996E54500C00BFE /* RootViewModel.swift in Sources */,

@@ -15,7 +15,7 @@ struct RootView: View {
       case .loggedOut:
         LoginView(viewModel: LoginViewModel(rootViewModel: viewModel))
       case .loggedIn:
-        TourneyListView()
+        PlayerSearchView()
       }
     }
 }

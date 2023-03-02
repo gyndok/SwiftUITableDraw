@@ -11,20 +11,20 @@ import FirebaseFirestoreSwift
 
 class PlayerListViewModel: ObservableObject {
   
-  @Published var players = [PokerPlayer]()
-  private let tourney: Tournament
-  private let currentUser: PokerPlayer
+  @Published var players = [PlayerModel]()
+  let tourney: Tournament
+  private let pokerPlayer: PokerPlayer
   private let db = Firestore.firestore()
   
   init(player: PokerPlayer, tourney: Tournament) {
-    currentUser = player
+    self.pokerPlayer = player
     self.tourney = tourney
   }
   
   func displayPlayersForLatestTable() {
     // get latest day of tourney
     guard let latestDay = tourney.days.last else { return }
-    if currentUser.participatedTables.contains(latestDay) {
+    if pokerPlayer.participatedTables.contains(latestDay) {
       fetchPlayers(for: latestDay)
     }
   }
@@ -64,7 +64,7 @@ class PlayerListViewModel: ObservableObject {
               print(error)
             case .success(let pokerPlayer):
               guard let pokerPlayer = pokerPlayer else { return }
-              self?.players.append(pokerPlayer)
+//              self?.players.append(pokerPlayer)
             }
           }
         }
