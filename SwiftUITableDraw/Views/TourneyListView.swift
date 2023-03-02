@@ -32,24 +32,45 @@ struct TourneyListView: View {
   
   var body: some View {
     VStack {
+              
+      VStack {
+        Text(viewModel.playerFullName)
+          .font(.body)
+          .fontWeight(.semibold)
+          .padding(5)
+        
+        Text(viewModel.player?.hometown ?? "")
+          .font(.subheadline)
+          .fontWeight(.semibold)
+        
+      }
+      .padding()
+      .font(.footnote)
+      .fontWeight(.thin)
+      .cornerRadius(30)
+      .shadow(color: Color.brown.opacity(0.3),
+              radius: 10,
+              x: 0.0, y:12)
+      .overlay(
+        RoundedRectangle(cornerRadius: 16)
+          .stroke(.brown, lineWidth: 4)
+      )
+
       List {
         ForEach(viewModel.tournaments.indices, id: \.self) { index in
           let tourney = viewModel.tournaments[index]
-          TourneyCell(tourney: tourney)
+          NavigationLink(destination:
+                          TableListView(viewModel: TableListViewModel(tournamentDayID: tourney.days.last,
+                                                                      playerTables: viewModel.player?.participatedTables ?? []))) {
+            TourneyCell(tourney: tourney)
+          }
         }
       }
       .listStyle(PlainListStyle())
       Spacer()
-    }.onAppear {
-      viewModel.executeTournamentSearch()
     }
   }
 }
-
-
-
-
-
 
 struct TourneyListView_Previews: PreviewProvider {
   static var previews: some View {

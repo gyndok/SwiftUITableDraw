@@ -10,6 +10,8 @@
 		2B25876629A953660081410C /* PlayerListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B25876529A953660081410C /* PlayerListViewModel.swift */; };
 		2B25878629B035250081410C /* PlayerSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B25878529B035250081410C /* PlayerSearchView.swift */; };
 		2B25878829B035980081410C /* PlayerSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B25878729B035980081410C /* PlayerSearchViewModel.swift */; };
+		2B25878A29B0688F0081410C /* TableListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B25878929B0688F0081410C /* TableListView.swift */; };
+		2B25878C29B068F40081410C /* TableListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B25878B29B068F40081410C /* TableListViewModel.swift */; };
 		2B46CB0829A6F76200ACA33C /* TourneyListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B46CB0729A6F76200ACA33C /* TourneyListViewModel.swift */; };
 		2B46CB0B29A6FE5300ACA33C /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 2B46CB0A29A6FE5300ACA33C /* FirebaseAuth */; };
 		2B46CB0D29A6FE5300ACA33C /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 2B46CB0C29A6FE5300ACA33C /* FirebaseFirestore */; };
@@ -45,6 +47,8 @@
 		2B25876529A953660081410C /* PlayerListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerListViewModel.swift; sourceTree = "<group>"; };
 		2B25878529B035250081410C /* PlayerSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSearchView.swift; sourceTree = "<group>"; };
 		2B25878729B035980081410C /* PlayerSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSearchViewModel.swift; sourceTree = "<group>"; };
+		2B25878929B0688F0081410C /* TableListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableListView.swift; sourceTree = "<group>"; };
+		2B25878B29B068F40081410C /* TableListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableListViewModel.swift; sourceTree = "<group>"; };
 		2B46CB0729A6F76200ACA33C /* TourneyListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourneyListViewModel.swift; sourceTree = "<group>"; };
 		2BB152E929A01E030087ADCC /* Tournament.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tournament.swift; sourceTree = "<group>"; };
 		2BB152EB29A01EE20087ADCC /* TournamentDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentDay.swift; sourceTree = "<group>"; };
@@ -139,6 +143,7 @@
 				44629C70298DAD93000FCE0B /* PlayerCell.swift */,
 				44629C6E298DAD82000FCE0B /* PlayerListView.swift */,
 				2B25878529B035250081410C /* PlayerSearchView.swift */,
+				2B25878929B0688F0081410C /* TableListView.swift */,
 				448025AA298E0EEE009736D2 /* PlayerDetailView.swift */,
 				44AD5B6E298EDDE5002EC96D /* LaunchScreen.storyboard */,
 				442882FB29933D940034C949 /* LoginView.swift */,
@@ -169,6 +174,7 @@
 				449704EC29901A52004CD71D /* Constants.swift */,
 				2BC299032996DEDA00C00BFE /* LoginViewModel.swift */,
 				2B46CB0729A6F76200ACA33C /* TourneyListViewModel.swift */,
+				2B25878B29B068F40081410C /* TableListViewModel.swift */,
 				2B25878729B035980081410C /* PlayerSearchViewModel.swift */,
 				2B25876529A953660081410C /* PlayerListViewModel.swift */,
 				2BC299072996E54500C00BFE /* RootViewModel.swift */,
@@ -257,12 +263,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B25878A29B0688F0081410C /* TableListView.swift in Sources */,
 				44629C71298DAD93000FCE0B /* PlayerCell.swift in Sources */,
 				44629C73298DADDF000FCE0B /* PlayerModel.swift in Sources */,
 				2BB152F229A0203B0087ADCC /* PokerPlayer.swift in Sources */,
 				442EDE24298E9EEB00382014 /* ModelData.swift in Sources */,
 				44FC1B2B298C910700D807D7 /* SwiftUITableDrawApp.swift in Sources */,
 				2BB152EC29A01EE30087ADCC /* TournamentDay.swift in Sources */,
+				2B25878C29B068F40081410C /* TableListViewModel.swift in Sources */,
 				2BC299062996E53500C00BFE /* RootView.swift in Sources */,
 				44FC1B3D298C91D900D807D7 /* TourneyCell.swift in Sources */,
 				449704ED29901A52004CD71D /* Constants.swift in Sources */,

@@ -12,9 +12,9 @@ struct RootView: View {
   
     var body: some View {
       switch viewModel.state {
-      case .loggedOut:
-        LoginView(viewModel: LoginViewModel(rootViewModel: viewModel))
-      case .loggedIn:
+//      case .loggedOut:
+//        LoginView(viewModel: LoginViewModel(rootViewModel: viewModel))
+      case .loggedOut, .loggedIn:
         PlayerSearchView()
       }
     }
