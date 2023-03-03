@@ -13,85 +13,32 @@ class TourneyListViewModel: ObservableObject {
   
   @Published var tournaments = [Tournament]()
   private let db = Firestore.firestore()
+  let player: PokerPlayer?
   
-  func executeTournamentSearch(for query: String) {
-    let separatedName = query.components(separatedBy: " ")
-    let firstName = separatedName.first
-    
-    var lastName: String? {
-      if separatedName.count > 1 {
-        var lastName = ""
-        for i in 1..<separatedName.count {
-          lastName.append(separatedName[i])
-          lastName.append(" ")
-        }
-        lastName.removeLast()
-        return lastName
-      }
-      return nil
-    }
-    
-    let dispatchGroup = DispatchGroup()
-    
-    // FirstName
-    dispatchGroup.enter()
-    var firstNameResults = [String]()
-    db.collection("PokerPlayers").whereField("first_name", isEqualTo: firstName ?? "").getDocuments { snapshot, error in
-      
-      defer {
-        dispatchGroup.leave()
-      }
-      
-      if let error = error {
-          print("Error getting documents: \(error)")
-      } else {
-        guard let snapshot = snapshot else { return }
-        let players = snapshot.documents.compactMap {
-          return try? $0.data(as: PokerPlayer.self)
-        }
-        for player in players {
-          firstNameResults.append(contentsOf: player.tournaments)
-        }
-      }
-    }
-      
-    // LastName
-    dispatchGroup.enter()
-    var lastNameResults = [String]()
-    db.collection("PokerPlayers").whereField("last_name", isEqualTo: lastName ?? "").getDocuments { snapshot, error in
-      
-      defer {
-        dispatchGroup.leave()
-      }
-      
-      if let error = error {
-          print("Error getting documents: \(error)")
-      } else {
-        guard let snapshot = snapshot else { return }
-        let players = snapshot.documents.compactMap {
-          return try? $0.data(as: PokerPlayer.self)
-        }
-        for player in players {
-          lastNameResults.append(contentsOf: player.tournaments)
-        }
-      }
-    }
-    
-    dispatchGroup.notify(queue: .global()) { [weak self] in
-      self?.getTournaments(for: Set(firstNameResults + lastNameResults))
-    }
+  var playerFullName: String {
+    guard let player = player else { return "" }
+    return player.firstName + " " + player.lastName
   }
   
-  private func getTournaments(for tournamentIDs: Set<String>) {
+  init(player: PokerPlayer?) {
+    self.player = player
+    executeTournamentSearch()
+  }
+  
+  private func executeTournamentSearch() {
     db.collection("Tournaments").getDocuments { [weak self] snapshot, error in
       if let error = error {
-          print("Error getting documents: \(error)")
+        print("Error getting documents: \(error)")
       } else {
         guard let snapshot = snapshot else { return }
         let tournaments: [Tournament] = snapshot.documents.compactMap({
-          if tournamentIDs.contains($0.documentID) {
-            var tournament = try? $0.data(as: Tournament.self)
-            tournament?.tournamentID = $0.documentID
+          if let tournaments = self?.player?.tournaments {
+            let tournamnetSet = Set(tournaments)
+            if tournamnetSet.contains($0.documentID) {
+              var tournament = try? $0.data(as: Tournament.self)
+              tournament?.tournamentID = $0.documentID
+              return tournament
+            }
           }
           return nil
         })

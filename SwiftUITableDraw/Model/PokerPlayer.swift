@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct PokerPlayer: Decodable {
+struct PokerPlayer: Decodable, Hashable {
   let firstName: String
   let lastName: String
   let hendonmobURL: String

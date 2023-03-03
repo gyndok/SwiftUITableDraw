@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-let player = PlayerModel(playerName: "Geffrey Klein", hometown: "Houston, Texas", tableNumber: 278, seatNumber: 3, chipCount: "$236,000", bigBlinds: 23.6)
+let player = PlayerModel(playerName: "Geffrey Klein", hometown: "Houston, Texas", tableNumber: "278", seatNumber: "3", chipCount: 236000, bigBlinds: 23.6, hendonmobURL: "")
 
 
 

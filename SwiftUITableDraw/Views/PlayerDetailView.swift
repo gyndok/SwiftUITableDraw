@@ -12,7 +12,7 @@ struct PlayerDetailView: View {
     let player: PlayerModel
     
     var body: some View {
-        WebView(request: URLRequest(url: URL(string: "https://www.google.com/search?q=\(player.playerName.replacingOccurrences(of: " ", with: "+"))+poker")!))
+      WebView(request: URLRequest(url: URL(string: player.hendonmobURL)!))
     }
 }
 
@@ -30,7 +30,7 @@ struct WebView: UIViewRepresentable {
 
 struct PlayerDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        PlayerDetailView(player: PlayerModel(playerName: "Geffrey Klein", hometown: "Houston, Texas", tableNumber: 278, seatNumber: 3, chipCount: "$236,000", bigBlinds: 23.6))
+        PlayerDetailView(player: PlayerModel(playerName: "Geffrey Klein", hometown: "Houston, Texas", tableNumber: "278", seatNumber: "3", chipCount: 236000, bigBlinds: 23.6, hendonmobURL: ""))
     }
 }
 

@@ -24,71 +24,61 @@ let userDefaults = UserDefaults.standard
 
 struct TourneyListView: View {
   
-  @ObservedObject private var viewModel = TourneyListViewModel()
-  @State private var searchPlayer = ""
+  @ObservedObject private var viewModel: TourneyListViewModel
+  
+  init(viewModel: TourneyListViewModel) {
+    self.viewModel = viewModel
+  }
   
   var body: some View {
-    
-    NavigationView {
-      VStack (spacing: 5) {
-        TextField("Who are you looking for?", text: $searchPlayer)
-          .autocorrectionDisabled(true)
-          .padding(.horizontal)
-          .frame(height: 55)
-          .background(Color(.systemGray6))
-          .cornerRadius(10)
-        Button (action:{
-          
-          userDefaults.set(searchPlayer, forKey: K.searchPlayerNameKey)
-          viewModel.tournaments.removeAll()
-          viewModel.executeTournamentSearch(for: searchPlayer)
-          
-          
-        }, label: {
-          Text("Find The Tables")
-            .font(.headline)
-            .frame(height:45)
-            .frame(width: 360)
-            .foregroundColor(.brown)
-            .background(Color.white)
-            .cornerRadius(10)
-        })
-        .padding()
-        .background(
-          Color.brown)
-        .shadow(color: Color.black.opacity(0.3),
-                radius: 10,
-                x: 0.0, y:12)
+    VStack {
+              
+      VStack {
+        Text(viewModel.playerFullName)
+          .font(.body)
+          .fontWeight(.semibold)
+          .padding(5)
         
+        Text(viewModel.player?.hometown ?? "")
+          .font(.subheadline)
+          .fontWeight(.semibold)
         
-        List {
-          ForEach(viewModel.tournaments.indices, id: \.self) { index in
-            let tourney = viewModel.tournaments[index]
-            NavigationLink(destination: PlayerListView(tourney: tourney)) {
-              TourneyCell(tourney: tourney)
-            }
-          }
-            
-        }
-        .listStyle(PlainListStyle())
-          
       }
+      .padding()
+      .font(.footnote)
+      .fontWeight(.thin)
+      .cornerRadius(30)
+      .shadow(color: Color.brown.opacity(0.3),
+              radius: 10,
+              x: 0.0, y:12)
+      .overlay(
+        RoundedRectangle(cornerRadius: 16)
+          .stroke(.brown, lineWidth: 4)
+      )
+
+      List {
+        ForEach(viewModel.tournaments.indices, id: \.self) { index in
+          let tourney = viewModel.tournaments[index]
+          NavigationLink(destination:
+                          TableListView(viewModel: TableListViewModel(tournamentDayID: tourney.days.last,
+                                                                      playerTables: viewModel.player?.participatedTables ?? []))) {
+            TourneyCell(tourney: tourney)
+          }
+        }
+      }
+      .listStyle(PlainListStyle())
+      Spacer()
     }
   }
 }
-  
-  
-  
-  
-  
-  
-  struct TourneyListView_Previews: PreviewProvider {
-    static var previews: some View {
-      NavigationStack{
-        TourneyListView()
-      }
+
+struct TourneyListView_Previews: PreviewProvider {
+  static var previews: some View {
+    NavigationStack{
+      TourneyListView(viewModel: TourneyListViewModel(player: nil))
     }
   }
-  
-  
-  
+}
+
+
+
