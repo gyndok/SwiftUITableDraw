@@ -12,10 +12,10 @@ import FirebaseFirestoreSwift
 class TableListViewModel: ObservableObject {
   @Published var players = [PlayerModel]()
   @Published var table: Table?
-  @Published var tournamentDay: TournamentDay?
+  let tournamentDayCell: TournamentDayCell?
+  
   @Published var state = State.success
   
-  private let tournamentDayID: String?
   private let playerTables: [String]
   private let db = Firestore.firestore()
   
@@ -24,10 +24,12 @@ class TableListViewModel: ObservableObject {
     case failed
   }
   
-  init(tournamentDayID: String?, playerTables: [String]) {
-    self.tournamentDayID = tournamentDayID
+  init(playerTables: [String], tournamentDayCell: TournamentDayCell) {
+    let tournamentDayID = tournamentDayCell.tournamentDayID
     self.playerTables = playerTables
-    loadTournamentDay { [weak self] result in
+    self.tournamentDayCell = tournamentDayCell
+    self.table = nil
+    loadTournamentDay(for: tournamentDayID) { [weak self] result in
       switch result {
       case .success(let tournamentDay):
         self?.getTablePlayers(for: tournamentDay)
@@ -37,9 +39,8 @@ class TableListViewModel: ObservableObject {
     }
   }
   
-  private func loadTournamentDay(completion: @escaping (Result<TournamentDay, Error>) -> Void) {
-    guard let tournamentDayID = tournamentDayID else { return }
-    db.collection("TournamentDays").getDocuments { [weak self] snapshot, error in
+  private func loadTournamentDay(for tournamentDayID: String, completion: @escaping (Result<TournamentDay, Error>) -> Void) {
+    db.collection("TournamentDays").getDocuments { snapshot, error in
       if let error = error {
         print("Error getting documents: \(error)")
       } else {
@@ -47,7 +48,6 @@ class TableListViewModel: ObservableObject {
               let document = snapshot.documents.first(where: { $0.documentID == tournamentDayID }),
               let tournamentDay = try? document.data(as: TournamentDay.self)
         else { return }
-        self?.tournamentDay = tournamentDay
         completion(.success(tournamentDay))
       }
     }

@@ -57,12 +57,11 @@ struct TourneyListView: View {
       )
 
       List {
-        ForEach(viewModel.tournaments.indices, id: \.self) { index in
-          let tourney = viewModel.tournaments[index]
+        ForEach(viewModel.tournamentDays.indices, id: \.self) { index in
+          let tournamentDayCell = viewModel.tournamentDays[index]
           NavigationLink(destination:
-                          TableListView(viewModel: TableListViewModel(tournamentDayID: tourney.days.last,
-                                                                      playerTables: viewModel.player?.participatedTables ?? []))) {
-            TourneyCell(tourney: tourney)
+                          TableListView(viewModel: TableListViewModel(playerTables: viewModel.player?.participatedTables ?? [], tournamentDayCell: tournamentDayCell))) {
+            TourneyCell(tournamentDayCell: tournamentDayCell)
           }
         }
       }

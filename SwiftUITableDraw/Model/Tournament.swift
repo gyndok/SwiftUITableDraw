@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Firebase
 
 struct Tournament: Decodable {
   let buyIn: UInt
@@ -14,9 +15,7 @@ struct Tournament: Decodable {
   let event: String
   let festival: String
   var tournamentID: String?
-  
-  // TODO: Figure out how firebase represnts dates
-//  let startDate: TimeInterval
+  let startDate: Timestamp
   let startingStack: UInt
   
   init(buyIn: UInt, days: [String], entries: UInt, event: String, festival: String, startingStack: UInt) {
@@ -27,6 +26,7 @@ struct Tournament: Decodable {
     self.festival = festival
     self.startingStack = startingStack
     self.tournamentID = nil
+    self.startDate = Timestamp(date: Date())
   }
   
   enum CodingKeys: String, CodingKey {
@@ -36,6 +36,7 @@ struct Tournament: Decodable {
     case event
     case festival
     case startingStack = "starting_stack"
+    case startDate = "start_date"
   }
   
   init(from decoder: Decoder) throws {
@@ -46,5 +47,6 @@ struct Tournament: Decodable {
     self.event = try container.decode(String.self, forKey: .event)
     self.festival = try container.decode(String.self, forKey: .festival)
     self.startingStack = try container.decode(UInt.self, forKey: .startingStack)
+    self.startDate = try container.decode(Timestamp.self, forKey: .startDate)
   }
 }
